@@ -1,0 +1,21 @@
+# Model weights — too large for GitHub (440MB)
+issue_type_classification_model/model/model.safetensors
+
+# Private files — contain tokens
+issue_type_classification_model/inference/upload_to_hf.py
+issue_type_classification_model/inference/test_model.py
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment files
+.env
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+desktop.ini
