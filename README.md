@@ -43,7 +43,7 @@ Phase 2 — Rule-Based Behavioral Metrics (Talking ratio, interruptions, silence
 Phase 3 — Deep Learning Evaluation
       ├── 3A: Customer Sentiment (RoBERTa — 3 class)                        🔄 In Progress
       ├── 3B: Agent Opening/Closing Compliance (RoBERTa — binary)           ⬜ Planned
-      └── 3C: Issue Classification (DualHead RoBERTa — 10 coarse / 78 fine) ✅ Done
+      └── 3C: Issue Classification (DualHead RoBERTa-large + SBERT ensemble — 10 coarse / 78 fine) ✅ Done
       ↓
 Phase 4 — RAG Policy Validation (FAISS + sentence-transformers + Groq LLM)  ✅ Done
       ↓
@@ -58,7 +58,7 @@ Phase 6 — Web Dashboard (React / Streamlit)                                  �
 
 | Phase | Description | Status |
 |-------|-------------|--------|
-| **Phase 3C** | Issue Classification — Dual-head RoBERTa fine-tuned on BANKING77 (10 coarse + 78 fine classes, 91.33% accuracy) | ✅ Done |
+| **Phase 3C** | Issue Classification — Dual-head RoBERTa-large + SBERT ensemble fine-tuned on BANKING77 (10 coarse + 78 fine classes, ~94% accuracy) | ✅ Done |
 | **Phase 4** | RAG Policy Validation — 78 FAISS indexes (one per issue type), retrieves top-k policy rules and evaluates agent compliance via Groq LLM | ✅ Done |
 | **Phase 5** | Scoring + Coaching Generation — LLM generates per-call coaching reports with violations, strengths, and suggested alternative phrasing | ✅ Done |
 | **Phase 1** | Speech-to-Text & Speaker Diarization (Whisper + pyannote.audio) | 🔄 In Progress |
@@ -70,9 +70,9 @@ Phase 6 — Web Dashboard (React / Streamlit)                                  �
 ### Completed Highlights
 
 **Phase 3C — Issue Classification**
-- Architecture: Dual-head RoBERTa (shared encoder, two classification heads)
+- Architecture: Dual-head RoBERTa-large with SBERT fallback ensemble (`all-mpnet-base-v2`)
 - Coarse head: 10 banking categories | Fine head: 78 issue classes
-- Accuracy: 91.33% on BANKING77 test set
+- Accuracy: 93.9% on BANKING77 test set
 - Model on HuggingFace: [Mohamed-Makram47/banking-issue-classifier](https://huggingface.co/Mohamed-Makram47/banking-issue-classifier)
 
 **Phase 4 — RAG Policy Validation**
@@ -97,7 +97,7 @@ Phase 6 — Web Dashboard (React / Streamlit)                                  �
 | Speech-to-Text | OpenAI Whisper |
 | Speaker Diarization | pyannote.audio |
 | NLP Models | RoBERTa (PyTorch + HuggingFace) |
-| Issue Classification | Dual-head RoBERTa (10 coarse + 78 fine classes) |
+| Issue Classification | Dual-head RoBERTa-large + SBERT ensemble (10 coarse + 78 fine classes) |
 | RAG | FAISS + sentence-transformers (`all-MiniLM-L6-v2`) |
 | LLM | Groq API (Llama 3) |
 | Backend | Python + FastAPI |
