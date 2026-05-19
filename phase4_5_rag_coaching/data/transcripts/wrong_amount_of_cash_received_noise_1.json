@@ -1,0 +1,50 @@
+{
+  "call_id": "wrong_amount_of_cash_received_noise_1",
+  "intent": "wrong_amount_of_cash_received",
+  "quality_level": "good",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Good afternoon, First National Bank. My name is Sandra. Can I take your full name and date of birth for security?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Uh yeah, hi. It's, um — Darren, Darren Oakes. And date of birth is, uh — twenty-first, no — yeah, twenty-first of, um, October. Nineteen, uh, eighty-one."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you Mr. Oakes, I've confirmed your identity. How can I help you?"
+    },
+    {
+      "speaker": "customer",
+      "text": "So, um, I was at your, uh — like the cash machine? On, uh, Field Road? And I took out — like I put in, uh, I asked for a hundred and, uh, I only got, like — [inaudible] — I think it was like sixty? Or maybe eighty? But definitely not a hundred."
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand. Do you know roughly what time you used the ATM?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Uh, yeah, it was like around — um — maybe twelve, twelve-thirty? Lunchtime, you know."
+    },
+    {
+      "speaker": "agent",
+      "text": "Perfect. I'm raising a cash discrepancy report for the Field Road ATM, midday today. Your reference number is ATM-2024-3619. The machine will be audited within two working days. If the overage matches your claim, the amount will be refunded automatically."
+    },
+    {
+      "speaker": "customer",
+      "text": "Oh right yeah. And like — uh — I don't need to do anything else? Like [inaudible] — I don't need to go to the branch or anything?"
+    },
+    {
+      "speaker": "agent",
+      "text": "No, everything is logged from this call. We'll contact you if we need any additional information."
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay, brilliant. That's, uh — yeah, that's all I needed. Um, cheers."
+    }
+  ],
+  "planted_violations": [],
+  "noise_injected": true
+}

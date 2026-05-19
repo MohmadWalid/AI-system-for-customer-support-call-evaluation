@@ -1,0 +1,50 @@
+{
+  "call_id": "wrong_amount_of_cash_received_good_2",
+  "intent": "wrong_amount_of_cash_received",
+  "quality_level": "good",
+  "variant": 2,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Good morning, First National Bank. I'm Kenji. Can I take your full name and date of birth for security?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hi, yeah — it's Louise Drummond, sixteenth of February 1988."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you Louise, you're verified. What can I help with today?"
+    },
+    {
+      "speaker": "customer",
+      "text": "So this is going to sound weird, but the cash machine shortchanged me. I asked for two-fifty and it only gave me two hundred. And it didn't give me a receipt."
+    },
+    {
+      "speaker": "agent",
+      "text": "That doesn't sound weird at all — I'm sorry that happened. Do you have the location of the ATM and roughly what time?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes, it's outside the Boots on Crown Street. It was at 9:17 this morning — I've got it on my phone."
+    },
+    {
+      "speaker": "agent",
+      "text": "Perfect — that timestamp will really help us pinpoint the machine's transaction log. I'm raising a cash discrepancy report right now. Reference ATM-2024-3551. The machine will be audited within two working days and if the discrepancy is confirmed, fifty pounds will be refunded to your account automatically."
+    },
+    {
+      "speaker": "customer",
+      "text": "And what if the audit doesn't show anything?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Our ATM investigations team will review transaction records and CCTV as a next step. Either way your case is formally logged and we will follow up. You'll receive a confirmation by email."
+    },
+    {
+      "speaker": "customer",
+      "text": "That's really good to know. Thank you Kenji."
+    }
+  ],
+  "planted_violations": [],
+  "noise_injected": false
+}

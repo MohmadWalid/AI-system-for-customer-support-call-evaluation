@@ -1,0 +1,59 @@
+{
+  "call_id": "card_arrival_incomplete_1",
+  "intent": "card_arrival",
+  "quality_level": "incomplete",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "First National Bank, how can I help?"
+    },
+    {
+      "speaker": "customer",
+      "text": "I need to ask about a card I ordered. It should have arrived by now and I'm starting to worry."
+    },
+    {
+      "speaker": "agent",
+      "text": "Can I get your name please?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Diana Russo."
+    },
+    {
+      "speaker": "agent",
+      "text": "One moment... okay, I can see an order. It was sent — sorry, my system is very slow today."
+    },
+    {
+      "speaker": "customer",
+      "text": "That's okay. Can you tell me when it was dispatched?"
+    },
+    {
+      "speaker": "agent",
+      "text": "It does show dispatched, yes. I'm going to have to put you on a brief hold."
+    },
+    {
+      "speaker": "customer",
+      "text": "Sure, that's fine."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you for holding. I'm going to have to transfer you to our card services team, they'll be able to give you more detail."
+    },
+    {
+      "speaker": "customer",
+      "text": "Wait — before you transfer me, can you at least confirm the address on file is correct?"
+    },
+    {
+      "speaker": "agent",
+      "text": "The card services team will go through all of that with you. Transferring you now, have a good day."
+    }
+  ],
+  "planted_violations": [
+    "failed to verify customer identity before accessing account details",
+    "transferred call without addressing or resolving the customer's question",
+    "did not confirm dispatch address before transfer despite direct request",
+    "call ended without resolution or clear next steps"
+  ],
+  "noise_injected": false
+}

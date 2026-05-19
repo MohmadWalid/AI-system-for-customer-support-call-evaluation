@@ -1,0 +1,50 @@
+{
+  "call_id": "cancel_transfer_noise_1",
+  "intent": "cancel_transfer",
+  "quality_level": "good",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Good afternoon, First National Bank. My name is Carly. Can I take your full name and date of birth for security?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yeah hi, um — it's, uh, Marcus Webb. And um, my date of birth is, uh — fifth — no, fifteenth? Fifteenth of, uh, July. Nineteen eighty-eight."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you Mr. Webb, I've confirmed your identity. What can I help you with?"
+    },
+    {
+      "speaker": "customer",
+      "text": "So I, uh — I made a transfur? Like I sent money? And uh — I realized straight away like, literally — uh — within like ten minutes that I'd, like, put the wrong — uh — account number in. Like I transposed some digits or something."
+    },
+    {
+      "speaker": "agent",
+      "text": "I completely understand. How much was the transfer for?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Uh, six — six hundred and, uh — fifty pounds. Yeah, six-fifty."
+    },
+    {
+      "speaker": "agent",
+      "text": "I can see that payment. Since it went via Faster Payments it's already settled, but I'm raising a formal recall request now. This contacts the receiving bank and formally requests the funds back."
+    },
+    {
+      "speaker": "customer",
+      "text": "Right, yeah. And like — uh — [inaudible] — what are the chances they, like, give it back?"
+    },
+    {
+      "speaker": "agent",
+      "text": "If the account number doesn't match any active account, the funds are returned automatically within forty-eight hours. If there is an account holder, they're legally obligated to return funds received in error. Reference number CAN-2024-8099. You'll receive an email confirmation."
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay brilliant. Um, yeah — like, uh — thank you. That's — that's taken a load off."
+    }
+  ],
+  "planted_violations": [],
+  "noise_injected": true
+}

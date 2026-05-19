@@ -1,0 +1,67 @@
+{
+  "call_id": "card_arrival_bad_2",
+  "intent": "card_arrival",
+  "quality_level": "bad",
+  "variant": 2,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "You're through to First National."
+    },
+    {
+      "speaker": "customer",
+      "text": "Yeah hi, I've been waiting on a card for like nearly two weeks now and I'm getting pretty fed up."
+    },
+    {
+      "speaker": "agent",
+      "text": "What's your account number?"
+    },
+    {
+      "speaker": "customer",
+      "text": "I don't have it in front of me. Can't you look me up by name?"
+    },
+    {
+      "speaker": "agent",
+      "text": "I need the account number to access anything."
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay, it's 00443892."
+    },
+    {
+      "speaker": "agent",
+      "text": "Right. The card system shows it sent. I can't tell you more than that."
+    },
+    {
+      "speaker": "customer",
+      "text": "When was it sent? And where was it sent to?"
+    },
+    {
+      "speaker": "agent",
+      "text": "It just says dispatched. These things get delayed all the time, not our problem."
+    },
+    {
+      "speaker": "customer",
+      "text": "Not your problem? I can't use my account without a card."
+    },
+    {
+      "speaker": "agent",
+      "text": "You can use the app. The card will come when it comes."
+    },
+    {
+      "speaker": "customer",
+      "text": "Can you reissue it at least?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Not until it's officially lost, which is after 30 days. Those are the rules. Sorry I can't help more."
+    }
+  ],
+  "planted_violations": [
+    "failed to verify customer identity — accessed account on account number alone without further verification",
+    "provided incorrect reissue policy (stated 30-day wait, no such policy exists)",
+    "dismissive language: 'not our problem'",
+    "did not confirm dispatch address or offer any remedial action"
+  ],
+  "noise_injected": false
+}

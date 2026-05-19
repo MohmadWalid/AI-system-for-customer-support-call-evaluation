@@ -1,0 +1,60 @@
+{
+  "call_id": "wrong_amount_of_cash_received_recovery_1",
+  "intent": "wrong_amount_of_cash_received",
+  "quality_level": "recovery",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "First National Bank, this is Leila."
+    },
+    {
+      "speaker": "customer",
+      "text": "Hi Leila, I have a problem with an ATM withdrawal. I asked for a hundred pounds and only got eighty."
+    },
+    {
+      "speaker": "agent",
+      "text": "I see. Can I get your name?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Robert Finch."
+    },
+    {
+      "speaker": "agent",
+      "text": "Mr. Finch, you'd need to visit the branch where the ATM is located to report that directly — they can check the machine on site."
+    },
+    {
+      "speaker": "customer",
+      "text": "Oh — I wouldn't have thought I'd need to go to the branch. Is that really the process?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Actually — I need to correct myself. I'm sorry, that's not right. You can absolutely report this over the phone and we can raise the investigation from here. I should have offered that straight away. Let me take your details properly — can I verify your identity first? Full name and date of birth?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Robert Finch, twenty-eighth of August 1963."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you Mr. Finch. And which ATM was it?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Erskine Street, outside Tesco."
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it. I'm raising an ATM cash discrepancy report now. Reference ATM-2024-3499. The audit should be completed within three working days and if confirmed, the twenty pounds will be refunded automatically."
+    },
+    {
+      "speaker": "customer",
+      "text": "That's much better, thank you."
+    }
+  ],
+  "planted_violations": [
+    "initially directed customer to branch unnecessarily; corrected before customer disconnected"
+  ],
+  "noise_injected": false
+}

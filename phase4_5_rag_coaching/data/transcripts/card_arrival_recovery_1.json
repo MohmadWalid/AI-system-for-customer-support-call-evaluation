@@ -1,0 +1,52 @@
+{
+  "call_id": "card_arrival_recovery_1",
+  "intent": "card_arrival",
+  "quality_level": "recovery",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Good afternoon, First National Bank. How can I help you?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hi, I'm calling about a replacement card. Ordered it about a week and a half ago and nothing's arrived."
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me pull up your account — what surname is it?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Patterson."
+    },
+    {
+      "speaker": "agent",
+      "text": "Right, I can see a card order here — actually, hold on. I need to properly verify your identity before I share any account details. I apologise, I should have started with that. Can I take your full name and date of birth please?"
+    },
+    {
+      "speaker": "customer",
+      "text": "No worries at all. Emily Patterson, second of June 1995."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you Emily, I've verified you now. The card was dispatched eight days ago, so it's just coming to the end of the standard delivery window. If it doesn't arrive by this Friday I can cancel and reissue with tracked delivery at no charge."
+    },
+    {
+      "speaker": "customer",
+      "text": "That's fine, I can wait until Friday. Just wanted to make sure nothing had gone wrong."
+    },
+    {
+      "speaker": "agent",
+      "text": "Completely understandable. I've added a note on your account so you won't need to re-explain if you do call back. Is there anything else I can help with?"
+    },
+    {
+      "speaker": "customer",
+      "text": "No, that's great. Thank you."
+    }
+  ],
+  "planted_violations": [
+    "began pulling up account details before completing identity verification"
+  ],
+  "noise_injected": false
+}

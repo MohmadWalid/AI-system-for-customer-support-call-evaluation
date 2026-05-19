@@ -1,0 +1,71 @@
+{
+  "call_id": "cancel_transfer_ambiguous_1",
+  "intent": "cancel_transfer",
+  "quality_level": "ambiguous",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Hi there, First National."
+    },
+    {
+      "speaker": "customer",
+      "text": "Hi. I sent a payment to the wrong person. Two hundred pounds. I realised about ten minutes after I did it."
+    },
+    {
+      "speaker": "agent",
+      "text": "What's your name?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Theo Marsh."
+    },
+    {
+      "speaker": "agent",
+      "text": "Right, let me have a look... Yes, I see the payment."
+    },
+    {
+      "speaker": "customer",
+      "text": "Can you do anything?"
+    },
+    {
+      "speaker": "agent",
+      "text": "I can log it as a potential misdirected payment. There may be a recall option. Let me check."
+    },
+    {
+      "speaker": "customer",
+      "text": "Please."
+    },
+    {
+      "speaker": "agent",
+      "text": "Okay, I've submitted something. I'm not a hundred percent sure it was the right form — I'll double-check with my supervisor."
+    },
+    {
+      "speaker": "customer",
+      "text": "Should I call back?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Leave it a day and see what happens."
+    },
+    {
+      "speaker": "customer",
+      "text": "What's my reference number? This is two hundred pounds."
+    },
+    {
+      "speaker": "agent",
+      "text": "I'd have to check. Let me take your number and call you back if there's an update."
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay... I'll wait I suppose."
+    }
+  ],
+  "planted_violations": [
+    "incomplete identity verification — name only",
+    "submitted unclear form without verifying correct process",
+    "failed to provide case reference number",
+    "resolution entirely unclear; customer left uncertain of outcome"
+  ],
+  "noise_injected": false
+}

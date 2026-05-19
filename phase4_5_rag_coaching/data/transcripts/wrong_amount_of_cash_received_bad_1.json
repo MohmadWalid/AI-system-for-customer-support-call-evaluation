@@ -1,0 +1,60 @@
+{
+  "call_id": "wrong_amount_of_cash_received_bad_1",
+  "intent": "wrong_amount_of_cash_received",
+  "quality_level": "bad",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "First National, go ahead."
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes, I withdrew fifty pounds from your ATM on Oak Street this morning and only got twenty. The machine took my card and gave me twenty quid."
+    },
+    {
+      "speaker": "agent",
+      "text": "ATM machines are very reliable. Are you sure you didn't just withdraw twenty?"
+    },
+    {
+      "speaker": "customer",
+      "text": "I am absolutely sure. I pressed fifty on the screen."
+    },
+    {
+      "speaker": "agent",
+      "text": "It's possible you pressed the wrong button by mistake."
+    },
+    {
+      "speaker": "customer",
+      "text": "I did not press the wrong button. I want to report this."
+    },
+    {
+      "speaker": "agent",
+      "text": "These things are hard to prove without a receipt. Without one there's not much I can do."
+    },
+    {
+      "speaker": "customer",
+      "text": "The machine didn't give me a receipt. That's part of the problem. What about CCTV?"
+    },
+    {
+      "speaker": "agent",
+      "text": "CCTV audits are done quarterly, not on individual reports."
+    },
+    {
+      "speaker": "customer",
+      "text": "This is outrageous. I want to raise a formal complaint."
+    },
+    {
+      "speaker": "agent",
+      "text": "You can email our complaints team."
+    }
+  ],
+  "planted_violations": [
+    "failed to verify customer identity",
+    "dismissed customer's claim without investigation",
+    "failed to raise an ATM discrepancy report as required by policy",
+    "incorrectly stated ATM audits are quarterly (audits are triggered by individual complaints)",
+    "did not provide complaint reference or properly route the complaint"
+  ],
+  "noise_injected": false
+}

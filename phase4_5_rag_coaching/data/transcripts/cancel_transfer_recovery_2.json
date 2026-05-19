@@ -1,0 +1,65 @@
+{
+  "call_id": "cancel_transfer_recovery_2",
+  "intent": "cancel_transfer",
+  "quality_level": "recovery",
+  "variant": 2,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "First National Bank, good afternoon."
+    },
+    {
+      "speaker": "customer",
+      "text": "Hi, I've been trying to cancel a payment I made this morning. One hundred and twenty pounds. I think I got the account number wrong."
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me see. Name?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yemi Adewale."
+    },
+    {
+      "speaker": "agent",
+      "text": "Looking at your account now... Okay, I see the transfer. I should mention — there's nothing we can do to cancel a Faster Payment once it's sent."
+    },
+    {
+      "speaker": "customer",
+      "text": "Really? Not even a recall request? I've seen it mentioned on your website."
+    },
+    {
+      "speaker": "agent",
+      "text": "Oh — you're right, I apologise. That is absolutely a service we offer and I should have mentioned it straight away. Before I raise it, let me properly verify your identity — full name and date of birth?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yemi Adewale, ninth of October 1997."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you. And the account number you intended to send versus what you actually sent?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Meant to send to 23456781 but I think I put 23456718 — transposed the last two digits."
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it. Raising the recall now. Reference CAN-2024-8043. The receiving bank has five working days to respond. If the account doesn't exist or is closed, funds return automatically within forty-eight hours."
+    },
+    {
+      "speaker": "customer",
+      "text": "Thank you — I did have to prompt you but I appreciate you following through."
+    },
+    {
+      "speaker": "agent",
+      "text": "Completely fair. I apologise for the initial confusion."
+    }
+  ],
+  "planted_violations": [
+    "initially stated nothing could be done without mentioning payment recall; required customer to raise it",
+    "did not verify identity before accessing account"
+  ],
+  "noise_injected": false
+}

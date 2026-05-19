@@ -1,0 +1,58 @@
+{
+  "call_id": "card_arrival_good_1",
+  "intent": "card_arrival",
+  "quality_level": "good",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Thank you for calling First National Bank. My name is Sarah. Can I take your full name and date of birth to verify your identity?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes, it's James Thornton, fourteenth of March 1988."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you Mr. Thornton, I've verified your account. How can I help you today?"
+    },
+    {
+      "speaker": "customer",
+      "text": "I ordered a replacement card about ten days ago and it still hasn't arrived. I'm getting a bit worried."
+    },
+    {
+      "speaker": "agent",
+      "text": "I completely understand, that must be frustrating. Let me pull up the card order now. I can see it was dispatched six days ago by standard post — delivery is typically five to seven working days, so you should receive it by Thursday at the latest."
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay, that's reassuring. Can you confirm it went to the right address?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Of course. I can read back the first line of the address on file — it shows 14 Maple Avenue. Is that correct?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes, that's right. Thank you."
+    },
+    {
+      "speaker": "agent",
+      "text": "If it hasn't arrived by end of day Thursday, please call us back and we can cancel and reissue with tracked delivery at no charge. I've made a note on your account."
+    },
+    {
+      "speaker": "customer",
+      "text": "Great, I'll wait until Thursday then. Thanks for your help."
+    },
+    {
+      "speaker": "agent",
+      "text": "My pleasure. Is there anything else I can help you with today?"
+    },
+    {
+      "speaker": "customer",
+      "text": "No, that's everything."
+    }
+  ],
+  "planted_violations": [],
+  "noise_injected": false
+}

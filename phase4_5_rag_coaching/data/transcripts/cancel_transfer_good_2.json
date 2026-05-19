@@ -1,0 +1,58 @@
+{
+  "call_id": "cancel_transfer_good_2",
+  "intent": "cancel_transfer",
+  "quality_level": "good",
+  "variant": 2,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Good morning, First National Bank. I'm Femi. Can I start by confirming your name and date of birth?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Morning. Petra Kovacs, fourth of April 1989."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you Petra, you're verified. What's happened today?"
+    },
+    {
+      "speaker": "customer",
+      "text": "I've done something really stupid — I sent money to the wrong account. Four hundred and fifty pounds. It was my sister's old account number that she's since closed."
+    },
+    {
+      "speaker": "agent",
+      "text": "Don't worry, we can deal with this. How long ago was the transfer?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Maybe forty minutes."
+    },
+    {
+      "speaker": "agent",
+      "text": "Do you know which bank your sister uses?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Nationwide, same as me."
+    },
+    {
+      "speaker": "agent",
+      "text": "Even better — an intra-bank recall is usually quicker. I'm raising it now. Reference CAN-2024-8010. Because the account was closed, Nationwide should automatically return the funds within forty-eight hours since closed accounts can't hold balances."
+    },
+    {
+      "speaker": "customer",
+      "text": "Oh, that's actually reassuring. So it should come back on its own?"
+    },
+    {
+      "speaker": "agent",
+      "text": "The recall ensures it's formally tracked and handled. I've also sent you an email confirmation. Is there anything else?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Thank you so much Femi. That's a massive relief."
+    }
+  ],
+  "planted_violations": [],
+  "noise_injected": false
+}
