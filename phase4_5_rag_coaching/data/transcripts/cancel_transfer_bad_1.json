@@ -1,0 +1,59 @@
+{
+  "call_id": "cancel_transfer_bad_1",
+  "intent": "cancel_transfer",
+  "quality_level": "bad",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "First National."
+    },
+    {
+      "speaker": "customer",
+      "text": "I need to cancel a transfer I made five minutes ago. Wrong account. Three hundred pounds."
+    },
+    {
+      "speaker": "agent",
+      "text": "Once a transfer has processed there's no way to cancel it."
+    },
+    {
+      "speaker": "customer",
+      "text": "Five minutes ago — surely the bank can do something?"
+    },
+    {
+      "speaker": "agent",
+      "text": "It's already cleared into the other account. That's how Faster Payments works."
+    },
+    {
+      "speaker": "customer",
+      "text": "Can you raise a recall? I've seen that mentioned on your website."
+    },
+    {
+      "speaker": "agent",
+      "text": "We don't do recalls. That's not a service we offer."
+    },
+    {
+      "speaker": "customer",
+      "text": "Can you transfer me to someone who can help?"
+    },
+    {
+      "speaker": "agent",
+      "text": "There isn't a specific team for that. Your best bet is to contact the person you sent it to and ask for it back."
+    },
+    {
+      "speaker": "customer",
+      "text": "I don't know who I sent it to — I typed the wrong number. Can I at least speak to a manager?"
+    },
+    {
+      "speaker": "agent",
+      "text": "They'll tell you the same thing. Sorry."
+    }
+  ],
+  "planted_violations": [
+    "failed to verify customer identity",
+    "incorrectly stated that payment recalls are not available (they are a standard banking service)",
+    "refused escalation request without offering supervisor",
+    "left customer with no recourse for misdirected payment"
+  ],
+  "noise_injected": false
+}

@@ -1,0 +1,42 @@
+{
+  "call_id": "cancel_transfer_good_1",
+  "intent": "cancel_transfer",
+  "quality_level": "good",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Good afternoon, First National Bank. My name is Rachel. Can I take your full name and date of birth for security?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Of course. It's David Kim, twenty-first of September 1986."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you David, identity confirmed. How can I help?"
+    },
+    {
+      "speaker": "customer",
+      "text": "I made a transfer about thirty minutes ago to the wrong account by mistake. I sent five hundred pounds to someone I don't know. I need to get it back urgently."
+    },
+    {
+      "speaker": "agent",
+      "text": "I completely understand the urgency. I can see the transfer. For Faster Payments, once processed it's at the receiving bank, but I can immediately raise a recall request which formally asks them to return the funds."
+    },
+    {
+      "speaker": "customer",
+      "text": "Will they have to return it?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Under UK payment rules, if the recipient confirms it was received in error they must return it. The process can take up to two weeks if they don't respond promptly. Reference number CAN-2024-7815 — you'll receive email updates. The sort code you sent to is Barclays, so you can also call Barclays' fraud line in parallel and quote a misdirected payment."
+    },
+    {
+      "speaker": "customer",
+      "text": "I'll do that right now. That's incredibly helpful. Thank you Rachel."
+    }
+  ],
+  "planted_violations": [],
+  "noise_injected": false
+}

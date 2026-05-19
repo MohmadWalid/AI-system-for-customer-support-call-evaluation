@@ -1,0 +1,59 @@
+{
+  "call_id": "cancel_transfer_incomplete_1",
+  "intent": "cancel_transfer",
+  "quality_level": "incomplete",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Good evening, First National Bank."
+    },
+    {
+      "speaker": "customer",
+      "text": "Good evening. I urgently need to cancel a transfer I made by mistake. It was fifteen hundred pounds to the wrong account."
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand, I'll try to help. Your name?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Vanessa Okonkwo."
+    },
+    {
+      "speaker": "agent",
+      "text": "Ms. Okonkwo, let me look at this... I can see the transfer. I'm going to need to put you on hold and speak to our payments team."
+    },
+    {
+      "speaker": "customer",
+      "text": "Please be quick, every minute counts."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you for holding. The payments team has advised they need you to fill in a form online. I'm just getting the web address — actually, my screen isn't loading. I'm going to have to call you back with the details."
+    },
+    {
+      "speaker": "customer",
+      "text": "Call me back? When?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Within the hour. The transfers team are aware of the situation."
+    },
+    {
+      "speaker": "customer",
+      "text": "Are they raising a recall? Is anything actually happening right now?"
+    },
+    {
+      "speaker": "agent",
+      "text": "I've flagged it. Someone will call you. Thanks for your patience."
+    }
+  ],
+  "planted_violations": [
+    "failed to verify customer identity",
+    "did not immediately raise payment recall; deferred to online form unnecessarily",
+    "committed to callback without certainty; left customer waiting with no active case reference",
+    "customer left with urgent unresolved issue and no reference number"
+  ],
+  "noise_injected": false
+}

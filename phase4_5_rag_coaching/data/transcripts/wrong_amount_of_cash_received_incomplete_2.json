@@ -1,0 +1,67 @@
+{
+  "call_id": "wrong_amount_of_cash_received_incomplete_2",
+  "intent": "wrong_amount_of_cash_received",
+  "quality_level": "incomplete",
+  "variant": 2,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "First National Bank, hello."
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello. I used your ATM on Maple Lane this morning and I'm pretty sure it gave me the wrong amount. I asked for eighty and I think I only got sixty."
+    },
+    {
+      "speaker": "agent",
+      "text": "Right, I can log something for that. Your name?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Colin Marsh."
+    },
+    {
+      "speaker": "agent",
+      "text": "Okay Mr. Marsh, let me see what we've got... I'm going to need to bring in a colleague on this actually."
+    },
+    {
+      "speaker": "customer",
+      "text": "A colleague? Should I have a pen handy for a reference number?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Yes — actually, hold on, let me just check something first."
+    },
+    {
+      "speaker": "customer",
+      "text": "Sure."
+    },
+    {
+      "speaker": "agent",
+      "text": "So Mr. Marsh I've had a quick look and I think what we'll do is have our specialist team call you back within two working days."
+    },
+    {
+      "speaker": "customer",
+      "text": "Call me back? Will I need to explain everything again?"
+    },
+    {
+      "speaker": "agent",
+      "text": "They'll have some notes from me. Is the number we have on file okay?"
+    },
+    {
+      "speaker": "customer",
+      "text": "I suppose so, but can I just get a reference number for now?"
+    },
+    {
+      "speaker": "agent",
+      "text": "A reference will be generated when they call. Thanks for your patience Mr. Marsh."
+    }
+  ],
+  "planted_violations": [
+    "failed to verify customer identity",
+    "did not raise ATM discrepancy report directly; deferred entirely to callback",
+    "failed to provide any case reference number",
+    "customer left without confirmation of next steps or timeline"
+  ],
+  "noise_injected": false
+}

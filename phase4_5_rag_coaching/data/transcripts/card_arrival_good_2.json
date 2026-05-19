@@ -1,0 +1,58 @@
+{
+  "call_id": "card_arrival_good_2",
+  "intent": "card_arrival",
+  "quality_level": "good",
+  "variant": 2,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Good morning, First National Bank. This is Daniel. Before we begin, could I take your full name and date of birth for security?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Of course. It's Priya Mehta, twenty-second of November 1990."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you Priya, identity confirmed. How can I help you today?"
+    },
+    {
+      "speaker": "customer",
+      "text": "So I got a new card issued about a week ago — I had to replace my old one — and it just hasn't come through yet. Is that normal?"
+    },
+    {
+      "speaker": "agent",
+      "text": "That's a really common concern. Delivery is five to seven working days from dispatch. Let me check where yours is in the process."
+    },
+    {
+      "speaker": "customer",
+      "text": "I just want to make sure it's not lost or sent to the wrong place."
+    },
+    {
+      "speaker": "agent",
+      "text": "Completely understandable. I can see it was dispatched four days ago, so you're well within the window. The card was sent to the address ending in Birch Road — is that right?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes, that's my address."
+    },
+    {
+      "speaker": "agent",
+      "text": "You're in good shape. I'd expect it to arrive tomorrow or the day after. If you reach next Tuesday and it still hasn't arrived, call us and we'll issue a new one same day with tracked post."
+    },
+    {
+      "speaker": "customer",
+      "text": "That's really helpful, thanks Daniel."
+    },
+    {
+      "speaker": "agent",
+      "text": "My pleasure. I've added a note to your account for reference. Anything else today?"
+    },
+    {
+      "speaker": "customer",
+      "text": "No, that's all."
+    }
+  ],
+  "planted_violations": [],
+  "noise_injected": false
+}

@@ -1,0 +1,58 @@
+{
+  "call_id": "card_arrival_noise_1",
+  "intent": "card_arrival",
+  "quality_level": "good",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Thank you for calling First National Bank. My name is Claire. Can I take your full name and date of birth to verify your identity?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Uh yeah, it's — sorry, um — Thomas, Thomas Kieran, no wait, Kearney. Thomas Kearney. And uh, date of birth is the, uh, third of — no, fourth of August, nineteen eighty-seven."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you Mr. Kearney, I've verified your account. What can I help you with today?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yeah so, I um — my cart hasn't arrived? Like my new bank cart, I ordered it, I don't know, like over a week ago now, maybe ten days?"
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand. Let me check the status of the card dispatch for you."
+    },
+    {
+      "speaker": "customer",
+      "text": "It's just — I've been using cash for everything which is like, you know, really annoying. And I'm worried it got like [inaudible] or sent to the wrong place or something."
+    },
+    {
+      "speaker": "agent",
+      "text": "I can see the card was dispatched seven days ago. It's right at the edge of the standard delivery window, so I'd expect it to arrive very soon — most likely today or tomorrow."
+    },
+    {
+      "speaker": "customer",
+      "text": "Oh okay. And it's going to my — uh, my address on file? Like the one in — um, sorry, in Coventry?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Yes, I can confirm it was sent to the Coventry address we have on record. If it doesn't arrive by the end of this week, call us back and I can cancel and reissue immediately."
+    },
+    {
+      "speaker": "customer",
+      "text": "Right yeah, that's — uh, that's good. And there's no — like [inaudible] — no extra charge for a replacement?"
+    },
+    {
+      "speaker": "agent",
+      "text": "No charge at all. I've noted today's call on your account. Is there anything else I can help with?"
+    },
+    {
+      "speaker": "customer",
+      "text": "No, that's — yeah, I think that's everything. Thanks."
+    }
+  ],
+  "planted_violations": [],
+  "noise_injected": true
+}

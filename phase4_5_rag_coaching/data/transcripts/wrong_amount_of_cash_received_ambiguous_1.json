@@ -1,0 +1,63 @@
+{
+  "call_id": "wrong_amount_of_cash_received_ambiguous_1",
+  "intent": "wrong_amount_of_cash_received",
+  "quality_level": "ambiguous",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Hi, First National, how can I help?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hi — so I withdrew money from the ATM and got less than I asked for. I wanted a hundred and fifty but got a hundred."
+    },
+    {
+      "speaker": "agent",
+      "text": "What's your name?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Olga Hernandez."
+    },
+    {
+      "speaker": "agent",
+      "text": "And when did this happen?"
+    },
+    {
+      "speaker": "customer",
+      "text": "About two hours ago. St. James Street ATM."
+    },
+    {
+      "speaker": "agent",
+      "text": "Right, I see. These things do happen occasionally with ATMs. I can make a note."
+    },
+    {
+      "speaker": "customer",
+      "text": "Just a note? Will there be an investigation?"
+    },
+    {
+      "speaker": "agent",
+      "text": "It may trigger a review at some point. If the machine comes up short in its daily balance, the difference gets allocated back."
+    },
+    {
+      "speaker": "customer",
+      "text": "And if it doesn't? I'm just waiting and hoping?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Essentially, yes. I've made the note. Call back if you don't hear anything."
+    },
+    {
+      "speaker": "customer",
+      "text": "Alright."
+    }
+  ],
+  "planted_violations": [
+    "incomplete identity verification — name only",
+    "did not raise formal ATM discrepancy report; only made an internal note",
+    "failed to give customer a case reference number",
+    "left customer without clear resolution or guarantee of follow-up"
+  ],
+  "noise_injected": false
+}

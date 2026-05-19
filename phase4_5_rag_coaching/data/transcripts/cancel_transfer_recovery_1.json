@@ -1,0 +1,61 @@
+{
+  "call_id": "cancel_transfer_recovery_1",
+  "intent": "cancel_transfer",
+  "quality_level": "recovery",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Good morning, First National Bank. This is Alex."
+    },
+    {
+      "speaker": "customer",
+      "text": "Alex, I've made a terrible mistake. I sent eight hundred pounds to the wrong account number. I mixed up two digits. Can you cancel it?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Let me see if there's a cancellation window. What's your name?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Diana Patel."
+    },
+    {
+      "speaker": "agent",
+      "text": "Ms. Patel, I can see the transfer. Unfortunately I'm unable to reverse it at this stage — Faster Payments are instantaneous once processed."
+    },
+    {
+      "speaker": "customer",
+      "text": "Is there absolutely nothing you can do?"
+    },
+    {
+      "speaker": "agent",
+      "text": "I... actually wait. I should have offered this immediately — I can raise a formal recall request. I apologise for not leading with that. That's the correct process. Let me verify your identity first — full name and date of birth?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Diana Patel, thirtieth of March 1994."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you. Raising the recall now. Reference CAN-2024-7901. The sort code you sent to is Santander — you can also call Santander's fraud line directly and quote a misdirected payment to help expedite recovery alongside our recall."
+    },
+    {
+      "speaker": "customer",
+      "text": "I'll call them now. Thank you for catching yourself on that."
+    },
+    {
+      "speaker": "agent",
+      "text": "I apologise again for the initial confusion. Is there anything else?"
+    },
+    {
+      "speaker": "customer",
+      "text": "No, I'm going to call Santander right now."
+    }
+  ],
+  "planted_violations": [
+    "initially stated nothing could be done without mentioning payment recall option; corrected before call ended",
+    "did not verify identity before accessing account details"
+  ],
+  "noise_injected": false
+}

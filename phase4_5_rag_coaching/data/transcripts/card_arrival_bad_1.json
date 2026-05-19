@@ -1,0 +1,51 @@
+{
+  "call_id": "card_arrival_bad_1",
+  "intent": "card_arrival",
+  "quality_level": "bad",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "First National Bank, go ahead."
+    },
+    {
+      "speaker": "customer",
+      "text": "Hi, I ordered a new card nearly two weeks ago and it hasn't arrived. Is something wrong?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Cards usually take two to three weeks, so you're still within the normal window. Just wait a bit longer."
+    },
+    {
+      "speaker": "customer",
+      "text": "Two to three weeks? The website said five to seven working days. It's already been ten working days."
+    },
+    {
+      "speaker": "agent",
+      "text": "Yeah, sometimes it takes longer depending on Royal Mail. There's nothing I can do until it's been a full three weeks."
+    },
+    {
+      "speaker": "customer",
+      "text": "Can you at least check it went to the right address?"
+    },
+    {
+      "speaker": "agent",
+      "text": "I don't have that in front of me right now. You'd need to go into a branch for that."
+    },
+    {
+      "speaker": "customer",
+      "text": "This is unacceptable. Can I speak to a manager?"
+    },
+    {
+      "speaker": "agent",
+      "text": "They'll tell you the same thing. Call back after three weeks if it still hasn't come."
+    }
+  ],
+  "planted_violations": [
+    "failed to verify customer identity before accessing account",
+    "provided incorrect delivery timeframe (stated 2-3 weeks instead of 5-7 working days)",
+    "refused to check dispatch address or take any remedial action",
+    "denied escalation request without offering supervisor"
+  ],
+  "noise_injected": false
+}

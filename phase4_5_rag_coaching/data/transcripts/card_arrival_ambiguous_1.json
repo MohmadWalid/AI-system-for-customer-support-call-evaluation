@@ -1,0 +1,61 @@
+{
+  "call_id": "card_arrival_ambiguous_1",
+  "intent": "card_arrival",
+  "quality_level": "ambiguous",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Hi, thanks for calling. What can I do for you?"
+    },
+    {
+      "speaker": "customer",
+      "text": "I'm waiting on a new debit card. Ordered it eight days ago and nothing's arrived."
+    },
+    {
+      "speaker": "agent",
+      "text": "Can I get your name and postcode?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Marcus Webb, SW6 3TP."
+    },
+    {
+      "speaker": "agent",
+      "text": "Okay, I can see something here. Shows dispatched last Thursday."
+    },
+    {
+      "speaker": "customer",
+      "text": "That was five days ago. So where is it?"
+    },
+    {
+      "speaker": "agent",
+      "text": "It's probably still in the post. These can get delayed sometimes."
+    },
+    {
+      "speaker": "customer",
+      "text": "Is there a tracking number? Can I check where it is?"
+    },
+    {
+      "speaker": "agent",
+      "text": "We don't offer tracking on standard card deliveries unfortunately."
+    },
+    {
+      "speaker": "customer",
+      "text": "And if it doesn't arrive by end of the week?"
+    },
+    {
+      "speaker": "agent",
+      "text": "Give us a call back and we can look at options at that point."
+    },
+    {
+      "speaker": "customer",
+      "text": "Alright. I suppose I'll wait then."
+    }
+  ],
+  "planted_violations": [
+    "incomplete identity verification — name and postcode only, date of birth not collected",
+    "no proactive offer to reissue or set a concrete follow-up deadline"
+  ],
+  "noise_injected": false
+}

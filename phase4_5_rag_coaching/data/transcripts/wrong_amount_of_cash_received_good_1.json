@@ -1,0 +1,50 @@
+{
+  "call_id": "wrong_amount_of_cash_received_good_1",
+  "intent": "wrong_amount_of_cash_received",
+  "quality_level": "good",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Good afternoon, First National Bank. My name is Michelle. Can I take your name and date of birth for security?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello, it's Frank Osei, second of July 1975."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you Mr. Osei, you're verified. How can I help today?"
+    },
+    {
+      "speaker": "customer",
+      "text": "I withdrew two hundred pounds from an ATM this afternoon and only received one hundred and sixty. The machine didn't give me an error or a receipt."
+    },
+    {
+      "speaker": "agent",
+      "text": "That's very concerning and I'm sorry that happened. Can I ask which ATM you used — do you have the location?"
+    },
+    {
+      "speaker": "customer",
+      "text": "It was on the high street — Barton Road, I think it's near the Halifax building."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you. I'm logging an ATM cash discrepancy report right now. The ATM will be physically audited and if the machine is found to be over by forty pounds, it will be refunded to your account automatically within three to five working days. Your case reference is ATM-2024-3312."
+    },
+    {
+      "speaker": "customer",
+      "text": "And if it turns out the machine balanced correctly?"
+    },
+    {
+      "speaker": "agent",
+      "text": "In that case we would review CCTV footage and you'd be able to provide a statement. These cases are resolved in the customer's favour in the vast majority of cases. Is there anything else?"
+    },
+    {
+      "speaker": "customer",
+      "text": "No, that's very thorough. Thank you Michelle."
+    }
+  ],
+  "planted_violations": [],
+  "noise_injected": false
+}

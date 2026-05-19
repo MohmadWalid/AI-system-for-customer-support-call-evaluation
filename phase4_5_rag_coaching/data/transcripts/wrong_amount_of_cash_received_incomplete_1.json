@@ -1,0 +1,58 @@
+{
+  "call_id": "wrong_amount_of_cash_received_incomplete_1",
+  "intent": "wrong_amount_of_cash_received",
+  "quality_level": "incomplete",
+  "variant": 1,
+  "transcript": [
+    {
+      "speaker": "agent",
+      "text": "Good morning, First National Bank."
+    },
+    {
+      "speaker": "customer",
+      "text": "Good morning. I have an issue with an ATM. I withdrew sixty pounds last night and only received forty. The machine didn't give any error."
+    },
+    {
+      "speaker": "agent",
+      "text": "I'm sorry to hear that. Can I take your name?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Jenna Park."
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you. I'll need to transfer you to our ATM disputes team — they have direct access to the machine records."
+    },
+    {
+      "speaker": "customer",
+      "text": "Oh, okay. Before you transfer me — can you give me a reference number?"
+    },
+    {
+      "speaker": "agent",
+      "text": "They'll generate one for you on the other end. Which ATM was it?"
+    },
+    {
+      "speaker": "customer",
+      "text": "The one on Duke Street."
+    },
+    {
+      "speaker": "agent",
+      "text": "Got it. Actually, the transfer might be quicker. Let me put you through now."
+    },
+    {
+      "speaker": "customer",
+      "text": "Are you going to—"
+    },
+    {
+      "speaker": "agent",
+      "text": "Transferring you now. They'll have all the details."
+    }
+  ],
+  "planted_violations": [
+    "failed to verify customer identity before discussing account",
+    "transferred without raising any discrepancy report or providing reference number",
+    "interrupted customer mid-sentence to complete transfer"
+  ],
+  "noise_injected": false
+}
