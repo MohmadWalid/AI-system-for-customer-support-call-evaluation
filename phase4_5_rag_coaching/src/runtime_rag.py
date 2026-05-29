@@ -1,122 +1,84 @@
 """
-src/runtime_rag.py — Class-scoped RAG evaluator.
+src/runtime_rag.py — Class-scoped evaluator using full-manual context.
+Loads all policies from the manual file directly and evaluates transcripts
+using a single LLM call with complete interleaved conversation context.
 """
 import json
 import time
 from pathlib import Path
 
-import faiss
-import numpy as np
 from groq import Groq
-from sentence_transformers import SentenceTransformer
 
-from config import (
-    GROQ_API_KEY, GROQ_MODEL,
-    EMBEDDING_MODEL,
-    INDEXES_DIR, MAPS_DIR,
-    SIMILARITY_THRESHOLD, TOP_K,
-)
+from config import GROQ_API_KEY, GROQ_MODEL, MANUALS_DIR
 
 
 class RAGEvaluator:
+    """
+    Evaluator that leverages Groq LLM to check compliance of interleaved
+    agent-customer conversations directly against full policy manuals.
+    """
 
     def __init__(self):
-        self.embedder = SentenceTransformer(EMBEDDING_MODEL)
-        self.client   = Groq(api_key=GROQ_API_KEY)
-        self._cache: dict = {}          # fine_label -> (index, policy_map)
+        # Initialize Groq client
+        self.client = Groq(api_key=GROQ_API_KEY)
 
-    # ------------------------------------------------------------------
-    def load_index(self, fine_label: str):
-        if fine_label in self._cache:
-            return self._cache[fine_label]
-
-        index_path = Path(INDEXES_DIR) / f"{fine_label}.faiss"
-        map_path   = Path(MAPS_DIR)    / f"{fine_label}.json"
-
-        if not index_path.exists():
-            raise FileNotFoundError(f"No FAISS index for class: {fine_label}")
-        if not map_path.exists():
-            raise FileNotFoundError(f"No policy map for class: {fine_label}")
-
-        index      = faiss.read_index(str(index_path))
-        policy_map = json.loads(map_path.read_text(encoding="utf-8"))
-
-        self._cache[fine_label] = (index, policy_map)
-        return index, policy_map
-
-    # ------------------------------------------------------------------
-    def retrieve(
-        self,
-        utterance: str,
-        fine_label: str,
-        k: int = TOP_K,
-        threshold: float = SIMILARITY_THRESHOLD,
-    ) -> list[dict]:
-        index, policy_map = self.load_index(fine_label)
-
-        vec = self.embedder.encode([utterance], normalize_embeddings=True)
-        vec = np.array(vec, dtype=np.float32)
-
-        k_actual = min(k, index.ntotal)
-        scores, indices = index.search(vec, k_actual)
-
-        results = []
-        for score, idx in zip(scores[0], indices[0]):
-            if idx == -1:
-                continue
-            if float(score) < threshold:
-                continue
-            entry = policy_map[idx]
-            results.append({
-                "rule":   entry["rule"],
-                "source": entry["source"],
-                "score":  round(float(score), 4),
-            })
-
-        return results
-
-    # ------------------------------------------------------------------
-    def evaluate_call(self, agent_turns: list[str], fine_label: str) -> dict:
+    def load_policies(self, fine_label: str) -> str:
         """
-        Evaluates the full conversation at once.
-        Retrieves policies for each agent turn, deduplicates, then sends
-        ALL turns + ALL relevant policies to LLM in one call.
-        Returns a single call-level verdict.
+        Reads the full text of the policy manual corresponding to a fine label.
+
+        Args:
+            fine_label (str): The predicted intent class of the call.
+
+        Returns:
+            str: Full text content of the manual.
         """
-        # Step 1: retrieve rules for every agent turn, deduplicate
-        all_rules = {}
-        for turn in agent_turns:
-            retrieved = self.retrieve(turn, fine_label)
-            for r in retrieved:
-                all_rules[r["rule"]] = r["score"]  # dedup by rule text, keep highest score
+        manual_path = Path(MANUALS_DIR) / f"{fine_label}.txt"
+        if not manual_path.exists():
+            raise FileNotFoundError(f"No manual for class: {fine_label}")
+        return manual_path.read_text(encoding="utf-8")
 
-        if all_rules:
-            rules_text = "\n".join(f"- {rule}" for rule in all_rules.keys())
-            confidence = "High" if max(all_rules.values()) >= SIMILARITY_THRESHOLD else "Low"
-        else:
-            rules_text = "(no relevant policies retrieved above threshold)"
-            confidence = "Low"
+    def evaluate_call(self, utterances: list[dict], fine_label: str) -> dict:
+        """
+        Evaluates the full conversation by sending interleaved utterances
+        and the full policy manual text to the Groq LLM model in a single prompt.
 
-        # Step 2: format all agent turns numbered
-        turns_text = "\n".join(
-            f"[{i+1}] \"{turn}\"" for i, turn in enumerate(agent_turns)
+        Args:
+            utterances (list[dict]): A list of all dialogue turns (both agent and customer).
+            fine_label (str): The predicted fine intent category.
+
+        Returns:
+            dict: Evaluation results containing verdict, violations list, and overall summary.
+        """
+        # Load all policies from the corresponding manual
+        policies_text = self.load_policies(fine_label)
+
+        # Build interleaved conversation labeled with speaker role
+        conversation = "\n".join(
+            f"[{i+1}] {u['speaker'].capitalize()}: \"{u['text']}\""
+            for i, u in enumerate(utterances)
         )
 
-        # Step 3: single LLM call for the whole conversation
+        # Single LLM call configuration and prompt creation
         prompt = (
             f"You are a banking call center QA evaluator.\n"
             f"Issue class: {fine_label}\n\n"
-            f"AGENT TURNS (full conversation):\n{turns_text}\n\n"
-            f"RELEVANT POLICIES:\n{rules_text}\n\n"
-            f"Evaluate the full conversation. Did the agent violate any policy?\n"
-            f"Only flag a violation if the agent clearly and directly broke a rule "
-            f"and did NOT correct themselves later in the conversation.\n\n"
+            f"CONVERSATION:\n{conversation}\n\n"
+            f"POLICIES:\n{policies_text}\n\n"
+            f"Evaluate the agent's FINAL performance in this conversation.\n"
+            f"Focus on the outcome of the call, not individual turns.\n"
+            f"If the agent made a mistake early but corrected it before the call ended, "
+            f"do NOT flag it as a violation.\n"
+            f"Only flag violations that were UNRESOLVED at the end of the call.\n\n"
             f"Reply ONLY in this JSON format:\n"
             f'{{"verdict": "violation" or "ok", '
-            f'"violations": [{{"turn": 1, "violated_policy": "...", "evidence": "...", "reason": "..."}}], '
+            f'"recovered": true or false, '
+            f'"recovery_note": "one sentence or empty string", '
+            f'"violations": [{{"turn": 1, "violated_policy": "...", '
+            f'"evidence": "...", "reason": "..."}}], '
             f'"overall_summary": "one sentence about the agent\'s overall performance"}}'
         )
 
+        # Groq API rate-limit resilient retry loop (max 9 attempts)
         for attempt in range(1, 10):
             try:
                 response = self.client.chat.completions.create(
@@ -127,16 +89,19 @@ class RAGEvaluator:
                 )
                 break
             except Exception as e:
-                if "rate_limit" in str(e).lower() or "429" in str(e) or (hasattr(e, "status_code") and e.status_code == 429):
-                    print(f"  [Groq] Rate limit hit. Sleeping 5s before retry (Attempt {attempt}/9)...")
+                if "rate_limit" in str(e).lower() or "429" in str(e) or (
+                    hasattr(e, "status_code") and e.status_code == 429
+                ):
+                    print(f"  [Groq] Rate limit hit. Sleeping 5s (attempt {attempt}/9)...")
                     time.sleep(5)
                 else:
                     raise e
 
+        # Extract and parse JSON robustly from the LLM response
         raw = response.choices[0].message.content.strip()
         try:
             start = raw.index("{")
-            end = raw.rindex("}") + 1
+            end   = raw.rindex("}") + 1
             parsed = json.loads(raw[start:end])
         except (ValueError, json.JSONDecodeError):
             parsed = {
@@ -145,10 +110,13 @@ class RAGEvaluator:
                 "overall_summary": raw,
             }
 
+        # Return dictionary with added metrics to maintain backward-compatibility with main.py
         return {
             "verdict":         parsed.get("verdict"),
+            "recovered":       parsed.get("recovered", False),
+            "recovery_note":   parsed.get("recovery_note", ""),
             "violations":      parsed.get("violations", []),
             "overall_summary": parsed.get("overall_summary", ""),
-            "confidence":      confidence,
-            "rules_retrieved": len(all_rules),
+            "confidence":      "High",
+            "rules_retrieved": len(policies_text.splitlines()),
         }

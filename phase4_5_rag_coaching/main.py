@@ -66,7 +66,7 @@ def main():
         print(DIVIDER)
 
         agent_turns = [u["text"] for u in utterances if u["speaker"] == "agent"]
-        result      = evaluator.evaluate_call(agent_turns, predicted_label)
+        result      = evaluator.evaluate_call(utterances, predicted_label)
 
         print(f"  Verdict  : {result['verdict'].upper()}")
         print(f"  Summary  : {result['overall_summary']}")
@@ -88,6 +88,8 @@ def main():
             "fine_label_predicted": predicted_label,
             "classifier_match":     classifier_match,
             "verdict":              result["verdict"],
+            "recovered":            result.get("recovered", False),
+            "recovery_note":        result.get("recovery_note", ""),
             "violations":           result["violations"],
             "overall_summary":      result["overall_summary"],
             "confidence":           result["confidence"],

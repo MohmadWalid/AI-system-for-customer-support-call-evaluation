@@ -11,6 +11,7 @@ from config import GROQ_API_KEY, GROQ_MODEL
 
 COACHING_DIR = Path("data/coaching")
 
+#TODO : Revise the whole file acording to the scoring.py and  runtime_rag.py
 
 def generate_coaching_report(call_result: dict) -> dict:
     fine_label      = call_result["fine_label_predicted"]
