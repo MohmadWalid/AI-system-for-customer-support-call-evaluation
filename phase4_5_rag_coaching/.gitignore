@@ -1,9 +1,13 @@
+# Claude Code
+.claude/
+
 # Environment / secrets
 .env
 
 # Python cache
 __pycache__/
 *.py[cod]
+*.pyc
 *.pyo
 
 # Virtual environments
@@ -12,6 +16,7 @@ venv*/
 env/
 
 # FAISS index and generated data (large binary artifacts)
+*.faiss
 data/policy_index.faiss
 data/policy_map.json
 data/results.json
