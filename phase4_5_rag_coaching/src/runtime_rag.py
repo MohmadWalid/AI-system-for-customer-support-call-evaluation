@@ -2,6 +2,7 @@
 src/runtime_rag.py — Class-scoped RAG evaluator.
 """
 import json
+import time
 from pathlib import Path
 
 import faiss
@@ -116,7 +117,6 @@ class RAGEvaluator:
             f'"overall_summary": "one sentence about the agent\'s overall performance"}}'
         )
 
-        import time
         for attempt in range(1, 10):
             try:
                 response = self.client.chat.completions.create(

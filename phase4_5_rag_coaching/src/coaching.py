@@ -2,6 +2,7 @@
 src/coaching.py — Generates per-call coaching reports from results.json.
 """
 import json
+import time
 from pathlib import Path
 
 from groq import Groq
@@ -44,24 +45,32 @@ def generate_coaching_report(call_result: dict) -> dict:
     )
 
     client   = Groq(api_key=GROQ_API_KEY)
-    response = client.chat.completions.create(
-        model=GROQ_MODEL,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.3,
-        max_tokens=600,
-    )
+    
+    for api_attempt in range(1, 10):
+        try:
+            response = client.chat.completions.create(
+                model=GROQ_MODEL,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.3,
+                max_tokens=600,
+            )
+            break
+        except Exception as e:
+            if "rate_limit" in str(e).lower() or "429" in str(e) or (
+                hasattr(e, "status_code") and e.status_code == 429
+            ):
+                print(f"  [Groq-Coaching] Rate limit hit. Sleeping 5s (attempt {api_attempt}/9)...")
+                time.sleep(5)
+            else:
+                raise e
 
     raw = response.choices[0].message.content.strip()
 
-    if raw.startswith("```"):
-        raw = raw.split("```")[1]
-        if raw.startswith("json"):
-            raw = raw[4:]
-        raw = raw.strip()
-
     try:
-        parsed = json.loads(raw)
-    except json.JSONDecodeError:
+        start = raw.index("{")
+        end = raw.rindex("}") + 1
+        parsed = json.loads(raw[start:end])
+    except (ValueError, json.JSONDecodeError):
         parsed = {
             "strengths":    ["(parse error — raw response below)"],
             "improvements": [],
