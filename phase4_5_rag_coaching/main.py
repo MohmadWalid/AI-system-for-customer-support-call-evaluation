@@ -4,9 +4,15 @@ main.py — Wires classifier + RAG evaluator over test transcripts.
 import json
 from pathlib import Path
 
+from groq import Groq
+
+from config import GROQ_API_KEY
 from src.classifier import ClassifierPipeline
-from src.runtime_rag import RAGEvaluator
 from scripts.transcripts import TRANSCRIPTS
+from scripts.classify_transcript import classify
+from scripts.retrievers import class_scoped
+from scripts.evaluators import call_level
+from scripts.experiment_utils import build_result
 from src.scoring import score_all_calls
 
 DIVIDER      = "=" * 70
@@ -18,13 +24,12 @@ def main():
     print("  Phase 4 RAG — Compliance Evaluator")
     print(DIVIDER)
 
-    print("\n[1/3] Loading classifier...")
+    print("\n[1/2] Loading classifier...")
     classifier = ClassifierPipeline()
 
-    print("\n[2/3] Loading RAG evaluator...")
-    evaluator = RAGEvaluator()
+    print(f"\n[2/2] Running {len(TRANSCRIPTS)} transcripts.\n")
 
-    print(f"\n[3/3] Running {len(TRANSCRIPTS)} transcripts.\n")
+    client = Groq(api_key=GROQ_API_KEY)
 
     total_violations = 0
     all_results      = []
@@ -34,28 +39,8 @@ def main():
         expected_label = transcript["fine_label"]
         utterances     = transcript["utterances"]
 
-        # ── Classify: individual customer turns with majority vote ────────
-        label_counts = {}
-        label_scores = {}
-
-        for u in utterances:
-            if u["speaker"] == "customer":
-                prediction = classifier(u["text"])
-                lbl = prediction["fine_label"]
-                score = prediction.get("confidence", 0.0)
-
-                label_counts[lbl] = label_counts.get(lbl, 0) + 1
-                label_scores[lbl] = label_scores.get(lbl, 0.0) + score
-
-        # Majority vote with confidence tie-breaker
-        predicted_label = None
-        if label_counts:
-            predicted_label = max(
-                label_counts.keys(),
-                key=lambda k: (label_counts[k], label_scores[k])
-            )
-        else:
-            predicted_label = "unknown"
+        # ── Classify: majority vote ───────────────────────────────────────
+        predicted_label = classify(utterances, classifier)
         classifier_match = predicted_label == expected_label
         match_icon       = "OK" if classifier_match else "MISMATCH"
 
@@ -65,7 +50,11 @@ def main():
         print(f"  Predicted: {predicted_label}  [{match_icon}]")
         print(DIVIDER)
 
-        result      = evaluator.evaluate_call(utterances, predicted_label)
+        try:
+            policies = class_scoped.load(predicted_label)
+        except FileNotFoundError:
+            policies = "(no relevant policies retrieved above threshold)"
+        result = call_level.evaluate(utterances, predicted_label, policies, client)
 
         print(f"  Verdict  : {result['verdict'].upper()}")
         print(f"  Summary  : {result['overall_summary']}")
@@ -79,17 +68,10 @@ def main():
         if result["verdict"] == "violation":
             total_violations += 1
 
-        all_results.append({
-            "call_id":              call_id,
-            "fine_label_expected":  expected_label,
-            "fine_label_predicted": predicted_label,
-            "classifier_match":     classifier_match,
-            "verdict":              result["verdict"],
-            "recovered":            result.get("recovered", False),
-            "recovery_note":        result.get("recovery_note", ""),
-            "violations":           result["violations"],
-            "overall_summary":      result["overall_summary"],
-        })
+        entry = build_result(call_id, predicted_label, result)
+        entry["fine_label_expected"] = expected_label
+        entry["classifier_match"]    = classifier_match
+        all_results.append(entry)
 
         print()
 

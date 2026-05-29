@@ -1,8 +1,7 @@
 """
-scripts/experiment_single_faiss.py — Experiment 1: Single global FAISS index.
-Runs all 64 transcripts through one global index instead of class-scoped indexes.
-Query = fine_label + customer turns joined → top 5 chunks above threshold 0.45
-Saves results to data/experiments/single_faiss_results.json
+Experiment: Call-level evaluation + Single global FAISS index.
+Condition 2 of the 2x2 ablation matrix.
+Saves results to data/experiments/call_single_results.json
 """
 import json
 import sys
@@ -12,24 +11,23 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import faiss
+import numpy as np
 from groq import Groq
 from sentence_transformers import SentenceTransformer
 
 from config import GROQ_API_KEY, EMBEDDING_MODEL
 from scripts.transcripts import TRANSCRIPTS
 from src.classifier import ClassifierPipeline
-from scripts.classify_transcript import classify
 from scripts.retrievers import single_faiss
 from scripts.evaluators import call_level
+from scripts.classify_transcript import classify
+from scripts.experiment_utils import print_summary, save_results, build_result, DIVIDER
 
 # Define experiment directory and output file paths
 EXPERIMENTS_DIR  = Path("data/experiments")
 INDEX_PATH       = EXPERIMENTS_DIR / "single_index.faiss"
 MAP_PATH         = EXPERIMENTS_DIR / "single_map.json"
-RESULTS_PATH     = EXPERIMENTS_DIR / "single_faiss_results.json"
-
-DIVIDER          = "=" * 70
-
+RESULTS_PATH     = EXPERIMENTS_DIR / "call_single_results.json"
 
 def main():
     if not INDEX_PATH.exists():
@@ -37,7 +35,7 @@ def main():
         sys.exit(1)
 
     print(DIVIDER)
-    print("  Experiment 1: Single FAISS Index")
+    print("  Experiment 2: Call-Level + Single FAISS Index")
     print(DIVIDER)
 
     print("\nLoading single index...")
@@ -79,31 +77,10 @@ def main():
         if result.get("verdict") == "violation":
             total_violations += 1
 
-        all_results.append({
-            "call_id":              call_id,
-            "fine_label_predicted": predicted_label,
-            "verdict":              result.get("verdict"),
-            "recovered":            result.get("recovered"),
-            "recovery_note":        result.get("recovery_note"),
-            "violations":           result.get("violations"),
-            "overall_summary":      result.get("overall_summary"),
-        })
+        all_results.append(build_result(call_id, predicted_label, result))
 
-    # Display high-level experiment metrics summary
-    print(DIVIDER)
-    print(f"  Transcripts evaluated : {len(TRANSCRIPTS)}")
-    print(f"  Calls with violations : {total_violations}")
-    print(f"  Compliance rate       : "
-          f"{((len(TRANSCRIPTS) - total_violations) / len(TRANSCRIPTS) * 100):.1f}%")
-    print(DIVIDER)
-
-    EXPERIMENTS_DIR.mkdir(parents=True, exist_ok=True)
-    RESULTS_PATH.write_text(
-        json.dumps(all_results, indent=2, ensure_ascii=False),
-        encoding="utf-8",
-    )
-    print(f"\nResults saved to: {RESULTS_PATH.resolve()}")
-
+    print_summary(len(TRANSCRIPTS), total_violations)
+    save_results(all_results, RESULTS_PATH)
 
 if __name__ == "__main__":
     main()
