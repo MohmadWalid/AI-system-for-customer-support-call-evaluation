@@ -6,7 +6,7 @@ from pathlib import Path
 
 from src.classifier import ClassifierPipeline
 from src.runtime_rag import RAGEvaluator
-from src.transcripts import TRANSCRIPTS
+from scripts.transcripts import TRANSCRIPTS
 from src.scoring import score_all_calls
 
 DIVIDER      = "=" * 70

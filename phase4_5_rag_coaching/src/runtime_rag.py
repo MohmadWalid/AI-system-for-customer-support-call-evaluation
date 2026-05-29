@@ -116,12 +116,22 @@ class RAGEvaluator:
             f'"overall_summary": "one sentence about the agent\'s overall performance"}}'
         )
 
-        response = self.client.chat.completions.create(
-            model=GROQ_MODEL,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.1,
-            max_tokens=500,
-        )
+        import time
+        for attempt in range(1, 10):
+            try:
+                response = self.client.chat.completions.create(
+                    model=GROQ_MODEL,
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=0.1,
+                    max_tokens=500,
+                )
+                break
+            except Exception as e:
+                if "rate_limit" in str(e).lower() or "429" in str(e) or (hasattr(e, "status_code") and e.status_code == 429):
+                    print(f"  [Groq] Rate limit hit. Sleeping 5s before retry (Attempt {attempt}/9)...")
+                    time.sleep(5)
+                else:
+                    raise e
 
         raw = response.choices[0].message.content.strip()
         if raw.startswith("```"):

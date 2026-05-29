@@ -2,6 +2,8 @@
 src/scoring.py — LLM-powered call quality scoring.
 """
 import json
+import re
+import time
 from pathlib import Path
 
 from groq import Groq
@@ -32,36 +34,44 @@ def assess_resolution(agent_turns: list[str], fine_label: str) -> dict:
     parsed = None
 
     for attempt in range(1, 4):
-        response = client.chat.completions.create(
-            model=GROQ_MODEL,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.2,
-            max_tokens=150,
-        )
+        for api_attempt in range(1, 10):
+            try:
+                response = client.chat.completions.create(
+                    model=GROQ_MODEL,
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=0.2,
+                    max_tokens=150,
+                )
+                break
+            except Exception as e:
+                if "rate_limit" in str(e).lower() or "429" in str(e) or (hasattr(e, "status_code") and e.status_code == 429):
+                    print(f"  [Groq-Scoring] Rate limit hit. Sleeping 5s before retry (Attempt {api_attempt}/9)...")
+                    time.sleep(5)
+                else:
+                    raise e
 
         raw = response.choices[0].message.content.strip()
-        if raw.startswith("```"):
-            raw = raw.split("```")[1]
-            if raw.startswith("json"):
-                raw = raw[4:]
-            raw = raw.strip()
-
         try:
-            parsed = json.loads(raw)
+            start = raw.index("{")
+            end = raw.rindex("}") + 1
+            raw_json = raw[start:end]
+            parsed = json.loads(raw_json)
             break                           # success — exit retry loop
-        except json.JSONDecodeError:
-            print(f"  [assess_resolution] attempt {attempt}/3 failed to parse JSON — retrying...")
-            parsed = None
+        except (ValueError, json.JSONDecodeError):
+            match = re.search(r'"resolved"\s*:\s*(true|false)', raw, re.IGNORECASE)
+            if not match:
+                match = re.search(r'resolved\b.*?\b(true|false|yes|no)', raw, re.IGNORECASE)
+            if match:
+                val = match.group(1).lower()
+                resolved_val = val in ["true", "yes"]
+                parsed = {"resolved": resolved_val, "reason": "(extracted via fuzzy regex)"}
+                break
+            else:
+                print(f"  [assess_resolution] attempt {attempt}/3 failed to parse JSON — retrying...")
+                parsed = None
 
     if parsed is None:
-        # Try regex extraction as last resort
-        import re
-        match = re.search(r'"resolved"\s*:\s*(true|false)', raw, re.IGNORECASE)
-        if match:
-            resolved_val = match.group(1).lower() == "true"
-            parsed = {"resolved": resolved_val, "reason": "(extracted via regex)"}
-        else:
-            parsed = {"resolved": False, "reason": "(parse error after 3 attempts)"}
+        parsed = {"resolved": False, "reason": "(parse error after 3 attempts)"}
 
     resolved = bool(parsed.get("resolved", False))
     return {
