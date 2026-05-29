@@ -1,0 +1,24 @@
+{
+  "call_id": "wrong_amount_of_cash_received_noise_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent successfully resolved the customer's issue by raising a cash discrepancy report and providing clear next steps for the refund process.",
+    "The agent's communication was professional, empathetic, and clear throughout the conversation.",
+    "The agent was able to recover from an earlier mistake, demonstrating adaptability and problem-solving skills."
+  ],
+  "improvements": [
+    "To further improve, the agent could benefit from asking more clarifying questions at the beginning of the call to ensure they fully understand the customer's issue.",
+    "The agent could also work on providing more detailed explanations of the refund process, including estimated timelines and any necessary documentation.",
+    "In the future, the agent could consider proactively offering solutions or alternatives to the customer, rather than simply resolving the issue and moving on."
+  ],
+  "rephrasing": [
+    {
+      "original": "None",
+      "better": "This call was a great example of the agent's ability to resolve complex issues and provide excellent customer service. However, there were a few areas where the agent could improve their communication and problem-solving skills."
+    }
+  ]
+}

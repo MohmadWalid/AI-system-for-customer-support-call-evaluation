@@ -1,0 +1,36 @@
+{
+  "call_id": "card_arrival_bad_2",
+  "fine_label_predicted": "card_arrival",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 4,
+  "strengths": [
+    "The agent was able to confirm that the card was sent and was aware of the card system's status.",
+    "The agent provided some general information about the card arrival process.",
+    "The agent was able to escalate the issue to a supervisor."
+  ],
+  "improvements": [
+    "The agent needs to improve their communication skills to be more empathetic and understanding towards customers.",
+    "The agent should provide clear and concise information about the estimated delivery timeframe and offer assistance with tracking or replacement.",
+    "The agent should be more proactive in offering solutions and alternatives to resolve the customer's issue."
+  ],
+  "rephrasing": [
+    {
+      "original": "The card system showed it sent.",
+      "better": "I've checked our system, and it shows that your card was sent on [date]. I can provide you with an estimated delivery timeframe of [timeframe]. Would you like me to assist you with tracking the package?"
+    },
+    {
+      "original": "It's not our problem, and the card will come when it comes.",
+      "better": "I understand that you're concerned about the delay. I want to assure you that we're doing our best to get your card to you as soon as possible. If you'd like, I can offer to assist you with tracking the package or provide information on how to track it yourself."
+    },
+    {
+      "original": "You need to wait 30 days.",
+      "better": "I understand that you're concerned about the delay. In the meantime, I can offer to assist you with tracking the package or provide information on how to track it yourself. If you'd like, I can also offer to replace the card once it's officially lost. Let me know how I can further assist you."
+    },
+    {
+      "original": "Not our problem.",
+      "better": "I understand that you're frustrated with the delay. I want to assure you that we're doing our best to get your card to you as soon as possible. Can I offer you any assistance or alternatives to resolve your issue?"
+    }
+  ]
+}

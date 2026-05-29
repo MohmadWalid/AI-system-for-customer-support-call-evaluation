@@ -1,0 +1,24 @@
+{
+  "call_id": "failed_card_payment_recovery_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent successfully resolved the customer's issue by updating the mobile number on the account and providing clear next steps.",
+    "The agent's communication was professional, empathetic, and clear throughout the conversation, showing understanding and providing a solution to the customer's problem.",
+    "The agent recovered well from an earlier mistake, demonstrating resilience and adaptability."
+  ],
+  "improvements": [
+    "The agent did not acknowledge or empathize with the customer in the first 30 seconds, which is a key policy requirement.",
+    "To improve policy compliance, the agent should strive to meet the 83.3% target by following policies and procedures more closely.",
+    "The agent should work on maintaining a high level of policy compliance throughout the conversation to ensure a seamless customer experience."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not acknowledge or empathize with the customer in the first 30 seconds.",
+      "better": "I apologize for the delay in responding. Can you please tell me a little bit about what brings you in touch with our bank today?"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "call_id": "disputed_charge_bad_1",
+  "fine_label_predicted": "direct_debit_payment_not_recognised",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 3,
+  "strengths": [
+    "The agent was able to provide some general information about the direct debit payment process, showing a basic understanding of the topic.",
+    "The agent attempted to provide a solution by suggesting the customer send a paper form or visit a branch, demonstrating a willingness to help.",
+    "The agent's communication skills were somewhat effective in conveying the bank's process, even if the tone was not ideal."
+  ],
+  "improvements": [
+    "The agent failed to verify the customer's identity before assisting them, which is a critical step in ensuring the customer's security and the bank's compliance.",
+    "The agent did not thoroughly investigate the direct debit payment, failing to check if there were any authorized direct debits set up on the customer's account.",
+    "The agent did not provide an immediate solution or alternative for the customer, instead suggesting a lengthy process that may not be convenient or acceptable to the customer."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not verify the customer's identity before assisting them.",
+      "better": "To ensure we protect your account, can you please confirm your name and account number with me so I can assist you further?"
+    },
+    {
+      "original": "The agent did not check if there are any authorized direct debits set up on the customer's account.",
+      "better": "Let me check on that for you. Can you please confirm if you have any authorized direct debits set up on your account? I want to make sure we're looking at the right information."
+    },
+    {
+      "original": "The agent did not initiate the dispute process by requesting written authorization from the customer.",
+      "better": "I understand that you're concerned about this direct debit payment. To resolve this issue, I'd like to initiate a dispute process for you. Can you please sign and return the authorization form I'm going to email to you, and I'll expedite the process as much as possible?"
+    }
+  ]
+}

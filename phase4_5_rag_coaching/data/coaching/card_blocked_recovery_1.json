@@ -1,0 +1,28 @@
+{
+  "call_id": "card_blocked_recovery_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent successfully unblocked the customer's card, resolving the issue and preventing similar problems in the future.",
+    "The agent's communication was professional, empathetic, and clear throughout the conversation, demonstrating high courtesy and understanding.",
+    "The agent recovered from an earlier mistake, showing adaptability and resilience in handling the customer's concern."
+  ],
+  "improvements": [
+    "The agent failed to acknowledge the customer's concern or show empathy in the initial greeting, which is a critical step in building rapport and trust.",
+    "To improve policy compliance, the agent should strive to meet the 100% target in future interactions.",
+    "The agent should work on maintaining a high level of policy compliance throughout the conversation to ensure seamless and efficient issue resolution."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not acknowledge the customer's concern or show empathy in the initial greeting.",
+      "better": "The agent could improve by acknowledging the customer's concern and showing empathy in the initial greeting, for example: 'I'm so sorry to hear that your card is blocked. Can you tell me more about what happened?'"
+    },
+    {
+      "original": "Policy: Rule 1: Acknowledge and Empathize",
+      "better": "Policy: Rule 1: Acknowledge and Empathize - Agents should acknowledge and empathize with customers' concerns in the initial greeting to build rapport and trust."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "call_id": "card_blocked_good_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent successfully resolved the customer's issue, demonstrating strong problem-solving skills and ability to follow through on solutions.",
+    "The agent's communication was professional, empathetic, and clear throughout the conversation, creating a positive customer experience.",
+    "The agent was able to recover from an earlier mistake, showcasing resilience and adaptability in a high-pressure situation."
+  ],
+  "improvements": [
+    "To further improve, the agent could work on proactively asking clarifying questions to ensure they fully understand the customer's issue before providing a solution.",
+    "The agent could also benefit from providing more detailed explanations of the actions taken to resolve the issue, helping to build trust and transparency with the customer.",
+    "In the future, the agent could aim to anticipate and address potential customer concerns or questions, rather than waiting for the customer to bring them up."
+  ],
+  "rephrasing": [
+    {
+      "original": "None",
+      "better": "This section is intentionally left blank as there were no violations to address, but it's essential to review and discuss any potential areas for improvement during future coaching sessions."
+    }
+  ]
+}

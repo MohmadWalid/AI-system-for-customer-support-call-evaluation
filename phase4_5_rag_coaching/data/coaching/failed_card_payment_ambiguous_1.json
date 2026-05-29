@@ -1,0 +1,24 @@
+{
+  "call_id": "failed_card_payment_ambiguous_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent initially missed empathizing with the customer but recovered by providing a clear explanation and taking action to resolve the issue.",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent's communication was professional, empathetic, and clear throughout the conversation.",
+    "The agent recovered from an earlier mistake by providing a clear explanation and taking action to resolve the issue.",
+    "The agent suggested potential next steps by recommending the customer try again after a system refresh, showing a proactive approach to resolution."
+  ],
+  "improvements": [
+    "The agent failed to acknowledge and empathize with the customer within the first 30 seconds, missing the opportunity to establish a positive tone.",
+    "The agent did not fully resolve the issue, leaving the customer with potential further steps to take.",
+    "The agent could benefit from more thorough issue resolution, ensuring that the customer's concern is fully addressed before closing the call."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent's greeting was 'Hi, First National, how can I help?' without acknowledging the customer's concern or showing empathy.",
+      "better": "A more effective greeting would be 'Hello, thank you for reaching out to First National. I'm here to help with your concern. Can you please tell me more about what's going on?' This acknowledges the customer's concern and shows empathy within the first 30 seconds."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "call_id": "wrong_amount_of_cash_received_bad_1",
+  "fine_label_predicted": "wrong_amount_of_cash_received",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 4,
+  "strengths": [
+    "(parse error — raw response below)"
+  ],
+  "improvements": [],
+  "rephrasing": []
+}

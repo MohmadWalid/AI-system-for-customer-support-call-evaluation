@@ -1,0 +1,28 @@
+{
+  "call_id": "balance_not_updated_recovery_2",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent initially suggested an issue with the BACS payment but quickly corrected this and provided a clear explanation.",
+  "verdict": "ok",
+  "violations_count": 2,
+  "strengths": [
+    "The agent successfully resolved the customer's issue by providing a clear explanation and a solution.",
+    "The agent's communication was professional, empathetic, and clear, with a polite tone and acknowledgment of their own mistake.",
+    "The agent was able to recover from an earlier mistake and provide a clear explanation."
+  ],
+  "improvements": [
+    "The agent did not immediately acknowledge and empathize with the customer's concern in the first 30 seconds.",
+    "The agent initially suggested an issue with the BACS payment without clear evidence.",
+    "The agent could improve their policy compliance by following rules more consistently."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent initially suggested there may be an issue with the BACS payment without clear evidence.",
+      "better": "I'm not seeing any issues with the BACS payment at this time. Can you please tell me more about what's concerning you?"
+    },
+    {
+      "original": "The agent initially focused on verifying the customer's identity before empathizing with their concern.",
+      "better": "I apologize for the delay, but I want to make sure I understand your concern correctly. Can you please tell me more about what's going on?"
+    }
+  ]
+}

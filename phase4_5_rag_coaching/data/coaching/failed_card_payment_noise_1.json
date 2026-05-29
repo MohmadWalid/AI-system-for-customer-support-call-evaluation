@@ -1,0 +1,24 @@
+{
+  "call_id": "failed_card_payment_noise_1",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent successfully resolved the customer's issues, demonstrating effective problem-solving skills.",
+    "The agent's communication was professional, empathetic, and clear throughout the conversation, creating a positive customer experience.",
+    "The agent achieved 100% policy compliance, adhering to all relevant banking policies and procedures."
+  ],
+  "improvements": [
+    "Consider asking clarifying questions to ensure a thorough understanding of the customer's needs and concerns.",
+    "In the future, it may be beneficial to provide additional information or resources to the customer to help them better understand their account settings and features.",
+    "To further enhance the customer experience, consider proactively offering solutions or alternatives when possible."
+  ],
+  "rephrasing": [
+    {
+      "original": "none",
+      "better": "This call was a great example of excellent customer service. However, to further improve, consider asking clarifying questions to ensure a thorough understanding of the customer's needs and concerns."
+    }
+  ]
+}

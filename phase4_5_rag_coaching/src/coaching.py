@@ -7,7 +7,7 @@ from pathlib import Path
 
 from groq import Groq
 
-from config import GROQ_API_KEY, GROQ_MODEL
+from config import GROQ_API_KEY, GROQ_EXPERIMENT_MODEL as GROQ_MODEL
 
 COACHING_DIR = Path("data/coaching")
 

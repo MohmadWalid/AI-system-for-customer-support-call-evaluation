@@ -1,0 +1,24 @@
+{
+  "call_id": "balance_not_updated_incomplete_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent initially failed to provide clear explanations but recovered by transferring the customer to the transfers team and providing a clear next step.",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent provided clear next steps by transferring the customer to the transfers team, ensuring the customer's issue was still being addressed.",
+    "The agent demonstrated professional, empathetic, and clear communication throughout the conversation, maintaining a positive customer experience.",
+    "The agent was able to recover from an earlier mistake, showing resilience and adaptability in handling the customer's issue."
+  ],
+  "improvements": [
+    "The agent needs to provide clear explanations of the issue or cause when encountering system limitations or unknown information.",
+    "The agent should strive to resolve the issue or provide a more definitive solution before transferring the customer to another team.",
+    "The agent should aim to improve policy compliance, specifically in providing clear explanations, to meet the expected standards."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent stated 'I really can't see the full details on my system.'",
+      "better": "I'm experiencing some technical difficulties with my system, and I want to ensure I provide you with the most accurate information possible. Let me transfer you to our transfers team, and they will be able to assist you further."
+    }
+  ]
+}

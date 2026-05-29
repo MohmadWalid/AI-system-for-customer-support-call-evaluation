@@ -1,0 +1,24 @@
+{
+  "call_id": "cancel_transfer_good_1",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent demonstrated excellent policy compliance, adhering to all banking policies and procedures.",
+    "The agent provided clear and concise communication, ensuring the customer understood the solution and next steps.",
+    "The agent showed empathy and professionalism throughout the call, creating a positive customer experience."
+  ],
+  "improvements": [
+    "Consider providing more proactive solutions to prevent similar issues in the future.",
+    "In the event of a transfer issue, ensure that the customer is aware of the estimated timeframe for resolution.",
+    "When explaining the process, consider using simpler language to ensure the customer fully understands the solution."
+  ],
+  "rephrasing": [
+    {
+      "original": "The receiving bank will contact you within 24-48 hours.",
+      "better": "We'll work with the receiving bank to ensure they receive the funds as soon as possible. You can expect to hear from them within the next 24-48 hours, and we'll follow up to confirm everything is resolved to your satisfaction."
+    }
+  ]
+}

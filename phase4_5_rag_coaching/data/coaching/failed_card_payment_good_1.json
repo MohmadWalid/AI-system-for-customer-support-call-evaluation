@@ -1,0 +1,24 @@
+{
+  "call_id": "failed_card_payment_good_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent successfully resolved the customer's issue by explaining the reason for the declined transaction, verifying the account and card status, and providing a clear solution for future transactions.",
+    "The agent's communication was professional, empathetic, and clear, demonstrating a helpful and understanding tone throughout the conversation.",
+    "The agent was able to recover from an earlier mistake, showing adaptability and resilience in a challenging situation."
+  ],
+  "improvements": [
+    "To further enhance the customer experience, the agent could have proactively offered to assist with any additional questions or concerns the customer may have had after resolving the issue.",
+    "In the future, the agent could benefit from double-checking the customer's account and card status before providing a solution to ensure accuracy and efficiency.",
+    "The agent could work on providing more specific examples or explanations to help customers understand complex banking concepts and policies."
+  ],
+  "rephrasing": [
+    {
+      "original": "None",
+      "better": "This call is being recorded for quality and training purposes. Is there anything else I can assist you with today?"
+    }
+  ]
+}

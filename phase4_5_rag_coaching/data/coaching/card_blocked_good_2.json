@@ -1,0 +1,24 @@
+{
+  "call_id": "card_blocked_good_2",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent demonstrated excellent policy compliance, adhering to all relevant banking policies and procedures.",
+    "The agent provided clear and empathetic communication, showing concern for the customer's issue and offering helpful solutions.",
+    "The agent effectively recovered from an earlier mistake, showcasing strong problem-solving skills and adaptability."
+  ],
+  "improvements": [
+    "To further enhance communication, the agent could have provided more specific details about the card replacement process, such as estimated delivery times or additional security measures.",
+    "In the future, the agent could benefit from asking more clarifying questions to ensure a complete understanding of the customer's needs and preferences.",
+    "To improve the overall customer experience, the agent could have offered more proactive solutions, such as suggesting a temporary card or Google Pay provisioning as a standard option."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent took action to block the card, generated a new card, and provided options for a temporary card or immediate Google Pay provisioning.",
+      "better": "I've gone ahead and blocked your card to prevent any further unauthorized transactions. I've also ordered a replacement card, which will be delivered to you within 5-7 business days. In the meantime, I can provide you with a temporary card or set up Google Pay provisioning to ensure you have access to your funds."
+    }
+  ]
+}

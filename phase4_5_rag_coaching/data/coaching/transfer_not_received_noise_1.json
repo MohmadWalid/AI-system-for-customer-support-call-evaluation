@@ -1,0 +1,28 @@
+{
+  "call_id": "transfer_not_received_noise_1",
+  "fine_label_predicted": "transfer_not_received_by_recipient",
+  "recovered": true,
+  "recovery_note": "The agent successfully recovered from initial lack of verification details by obtaining necessary information later in the call.",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent demonstrated excellent policy compliance, adhering to all relevant banking policies and procedures.",
+    "The agent effectively recovered from an initial mistake by obtaining necessary verification details later in the call, showcasing strong problem-solving skills.",
+    "The agent's communication was professional, empathetic, and clear throughout the conversation, providing a positive customer experience."
+  ],
+  "improvements": [
+    "To further enhance the customer experience, the agent could have proactively offered to escalate the issue to a supervisor or manager if the customer was not satisfied with the resolution.",
+    "In the future, the agent could benefit from verifying all necessary details upfront to avoid potential delays or mistakes.",
+    "To improve efficiency, the agent could have provided a more detailed explanation of the payment trace process and estimated timeframe for resolution."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not verify the recipient's details upfront.",
+      "better": "To ensure a smooth transaction, I'd like to confirm the recipient's name and account information to proceed with the transfer. Can you please provide that information for me?"
+    },
+    {
+      "original": "The agent did not offer to escalate the issue.",
+      "better": "If you're not satisfied with the resolution, I'd be happy to escalate this issue to a supervisor or manager who can further assist you. Would you like me to do that?"
+    }
+  ]
+}

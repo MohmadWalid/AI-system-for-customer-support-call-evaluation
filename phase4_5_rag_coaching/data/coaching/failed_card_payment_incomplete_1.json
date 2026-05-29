@@ -1,0 +1,28 @@
+{
+  "call_id": "failed_card_payment_incomplete_1",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 2,
+  "strengths": [
+    "The agent was professional, empathetic, and clear in their communication, showing understanding of the customer's urgency and providing a valid reason for the transfer.",
+    "The agent provided a clear next step by transferring the customer to another team.",
+    "The agent demonstrated a good understanding of the customer's urgency and provided a valid reason for the transfer."
+  ],
+  "improvements": [
+    "The agent should immediately acknowledge and empathize with the customer's urgent situation to show understanding and build trust.",
+    "The agent should provide clear explanations of the issue, the flag on the card, and the reason for the transfer to the card security team to ensure the customer understands the next steps.",
+    "The agent should ensure that all necessary information is provided to the customer before transferring them to another team."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not acknowledge or empathize with the customer's urgent situation until it was mentioned again.",
+      "better": "I understand that you're experiencing an urgent issue, and I apologize for the inconvenience. I'm going to do my best to assist you, but I think it would be best if I transferred you to our card security team who specializes in this area. They'll be able to provide you with more in-depth assistance."
+    },
+    {
+      "original": "The agent did not provide a clear explanation of the flag on the card or the reason for the transfer to the card security team.",
+      "better": "The flag on your card is due to a security alert that we've received. I'm going to transfer you to our card security team, and they'll be able to review the issue with you in more detail and provide a resolution. They'll also be able to answer any questions you may have and provide you with a clear explanation of the next steps."
+    }
+  ]
+}

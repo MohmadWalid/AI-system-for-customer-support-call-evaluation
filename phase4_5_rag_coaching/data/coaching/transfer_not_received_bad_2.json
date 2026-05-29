@@ -1,0 +1,32 @@
+{
+  "call_id": "transfer_not_received_bad_2",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 3,
+  "strengths": [
+    "The agent was able to maintain a somewhat professional tone throughout the conversation.",
+    "The agent provided some general information about the customer's account, which showed that they were familiar with the customer's situation.",
+    "The agent's responses were generally clear and concise, although they could have been more helpful."
+  ],
+  "improvements": [
+    "The agent needs to improve their ability to acknowledge and empathize with customers in their initial responses.",
+    "The agent should provide clear explanations and next steps to customers, rather than simply suggesting they wait or stating that there's nothing else that can be done.",
+    "The agent should consider escalating issues to a supervisor or specialized team when customers express concerns that cannot be resolved through normal channels."
+  ],
+  "rephrasing": [
+    {
+      "original": "Transfers, go ahead.",
+      "better": "Thank you for reaching out about your concern. I'm here to help. Can you please tell me more about what's going on with your account so I can better understand the issue?"
+    },
+    {
+      "original": "Sorry, not much else I can do.",
+      "better": "I apologize that we're unable to resolve the issue immediately. However, I can offer to escalate this to a supervisor who may be able to provide further assistance. Would you like me to do that?"
+    },
+    {
+      "original": "Wait a few more days.",
+      "better": "I understand that you're concerned about missing funds. I'm going to go ahead and check on the status of your account. In the meantime, I can also offer to send you a follow-up email or call to check in with you and provide an update on the status of your account."
+    }
+  ]
+}

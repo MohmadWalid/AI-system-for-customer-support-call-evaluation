@@ -1,0 +1,36 @@
+{
+  "call_id": "card_arrival_bad_1",
+  "fine_label_predicted": "card_arrival",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 5,
+  "strengths": [
+    "The agent remained professional and polite throughout the conversation, maintaining a positive tone despite the customer's frustration.",
+    "The agent provided general information about card delivery times, which is a good starting point for addressing customer inquiries.",
+    "The agent offered to help the customer find a branch location, showing a willingness to assist with the customer's needs."
+  ],
+  "improvements": [
+    "The agent needs to improve their ability to acknowledge and empathize with customers' concerns, providing a more personal touch to the conversation.",
+    "The agent should check the status of card shipments using customer account information and internal systems to provide more accurate and helpful responses.",
+    "The agent should provide clear and accurate estimated delivery timeframes based on the customer's specific situation, rather than relying on general information."
+  ],
+  "rephrasing": [
+    {
+      "original": "You're still within the normal window, so you should receive your card soon.",
+      "better": "I understand you're concerned about the delay. I'd like to check the status of your card shipment to see if there's any update on the delivery date. Can I look into that for you?"
+    },
+    {
+      "original": "It usually takes two to three weeks for the card to arrive.",
+      "better": "Based on our internal systems, it appears that your card is still in transit. According to our website, delivery typically takes five to seven working days. I'd like to check on the status of your shipment to see if there's any update on the delivery date."
+    },
+    {
+      "original": "You'll need to go into a branch to check the address on the package.",
+      "better": "I can offer to assist you with tracking the package. Can I provide you with the tracking information and help you locate the package? If there's an issue with the address, we can also discuss options for replacement or re-delivery."
+    },
+    {
+      "original": "Just call back after three weeks and we'll help you with the issue.",
+      "better": "I apologize for the inconvenience. I'd like to document your concern and offer to escalate the issue to a supervisor if needed. Can I provide you with a reference number for your issue and follow up with you to ensure it's resolved to your satisfaction?"
+    }
+  ]
+}

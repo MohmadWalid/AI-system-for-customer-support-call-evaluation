@@ -1,0 +1,32 @@
+{
+  "call_id": "cancel_transfer_incomplete_1",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 3,
+  "strengths": [
+    "The agent was professional and empathetic throughout the conversation, as indicated by a Communication score of 70.",
+    "The agent was able to maintain a positive tone and remained calm despite the customer's urgent concern.",
+    "The agent's initial greeting was friendly and welcoming, setting a positive tone for the conversation."
+  ],
+  "improvements": [
+    "The agent failed to acknowledge and empathize with the customer within the first 30 seconds of the conversation, violating Rule 1: Acknowledge and Empathize.",
+    "The agent did not provide clear explanations of next steps or timelines for resolution, violating Rule 3: Provide Clear Explanations in Turns 7 and 11.",
+    "The agent was unable to resolve the issue directly and had to call the customer back with next steps, indicating a need for improvement in Resolution skills."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not acknowledge and empathize with the customer within the first 30 seconds of the conversation.",
+      "better": "I appreciate you reaching out to us today. I understand that you're experiencing some issues with your account, and I'm here to help resolve them as quickly as possible."
+    },
+    {
+      "original": "The agent informed the customer that they would have to call them back with the details, but did not provide a clear explanation of the next steps or a specific timeline for resolution.",
+      "better": "I'm going to need to investigate this further. I'll be calling you back within the next 24 hours with an update on the status of your account. In the meantime, I'll make sure to escalate this issue to our team and provide you with a clear plan of action."
+    },
+    {
+      "original": "The agent's final response did not provide clear information about the actions being taken to resolve the issue, only that someone would call the customer.",
+      "better": "I've escalated your issue to our team, and someone will be calling you within the next 24 hours to provide you with an update on the status of your account. In the meantime, I'll make sure to follow up with you to ensure that your issue is being addressed promptly and efficiently."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "call_id": "disputed_charge_bad_2",
+  "fine_label_predicted": "extra_charge_on_statement",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 3,
+  "strengths": [
+    "The agent was able to gather relevant information from the customer, including the date and amount of the disputed charge.",
+    "The agent was familiar with the bank's policy regarding unauthorized charges and was able to cite it during the conversation.",
+    "The agent attempted to provide a clear explanation of the bank's process for disputing charges."
+  ],
+  "improvements": [
+    "The agent failed to acknowledge and apologize for the customer's concern, which led to a dismissive tone.",
+    "The agent did not offer a solution or alternative to refund or reverse the charge despite the customer's dispute.",
+    "The agent did not document or escalate the customer's concern, which may have led to a lack of follow-up action."
+  ],
+  "rephrasing": [
+    {
+      "original": "Without evidence it's difficult to proceed",
+      "better": "I understand your concern about the extra charge on your statement. To assist you further, I'd like to request some additional information to review your account."
+    },
+    {
+      "original": "Well that's the current process. Sorry.",
+      "better": "I apologize for any inconvenience this has caused. I want to assure you that I'm here to help. Can I explain our process for disputing charges and see if there's anything else I can do to assist you?"
+    },
+    {
+      "original": "The agent did not offer to refund or reverse the charge despite the customer's dispute.",
+      "better": "I understand that you'd like to dispute the charge. Unfortunately, our policy requires written disputes for amounts over £100. However, I can offer to put a note on your account to prevent any further charges and provide you with a reference number for your dispute. Would you like me to do that?"
+    }
+  ]
+}

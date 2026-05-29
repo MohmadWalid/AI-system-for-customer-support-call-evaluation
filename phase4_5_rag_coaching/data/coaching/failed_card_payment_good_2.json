@@ -1,0 +1,24 @@
+{
+  "call_id": "failed_card_payment_good_2",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent successfully resolved the customer's issue by whitelisting international e-commerce for their account and enabling transaction notifications.",
+    "The agent's communication was professional, empathetic, and clear throughout the conversation.",
+    "The agent demonstrated strong recovery skills after an earlier mistake, maintaining a positive tone and resolving the issue efficiently."
+  ],
+  "improvements": [
+    "To further improve, the agent could have proactively offered to escalate the issue to a supervisor or manager if the customer was not satisfied with the resolution.",
+    "In the future, the agent could benefit from asking more clarifying questions to ensure a complete understanding of the customer's issue before providing a solution.",
+    "The agent could have provided more detailed explanations of the changes made to the customer's account, such as the specific settings enabled or disabled."
+  ],
+  "rephrasing": [
+    {
+      "original": "None",
+      "better": "This call is being recorded for quality purposes. Is there anything else I can assist you with today?"
+    }
+  ]
+}

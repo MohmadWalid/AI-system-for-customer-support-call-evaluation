@@ -1,0 +1,24 @@
+{
+  "call_id": "balance_not_updated_noise_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent initially missed empathizing with the customer but recovered by providing clear explanations and resolving the issue.",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent provided a clear explanation of the transfer status and next steps to resolve the issue.",
+    "The agent's communication was professional, empathetic, and clear throughout the conversation.",
+    "The agent recovered from an earlier mistake and was able to resolve the issue."
+  ],
+  "improvements": [
+    "The agent initially missed empathizing with the customer in the initial greeting.",
+    "The agent could improve policy compliance by addressing the issue more thoroughly.",
+    "The agent should strive to consistently acknowledge and empathize with customers from the start of the conversation."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not use an empathetic phrase in the initial greeting.",
+      "better": "Let me start by acknowledging that I understand you're experiencing some difficulties with your account. Can you please tell me more about what's going on?"
+    }
+  ]
+}

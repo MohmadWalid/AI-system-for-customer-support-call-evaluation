@@ -1,0 +1,28 @@
+{
+  "call_id": "wrong_amount_of_cash_received_incomplete_2",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 2,
+  "strengths": [
+    "The agent's communication was professional, empathetic, and clear, with a polite tone and courtesy to the customer.",
+    "The agent was able to escalate the issue to a specialist team and provide a solution, even if it was not immediate.",
+    "The agent maintained a positive and respectful attitude throughout the conversation."
+  ],
+  "improvements": [
+    "The agent needs to acknowledge and empathize with the customer's concern within the first 30 seconds of the conversation.",
+    "The agent should gather all necessary information and provide clear explanations of the next steps, including providing a reference number immediately.",
+    "The agent should avoid escalating issues without providing a temporary solution or explanation to the customer."
+  ],
+  "rephrasing": [
+    {
+      "original": "The specialist team will call you back within two working days to resolve the issue.",
+      "better": "I'm going to escalate this issue to our specialist team, and they will contact you within two working days to provide a resolution. In the meantime, I can offer you a temporary solution or provide more information on what to expect during the call back."
+    },
+    {
+      "original": "A reference number will be generated when the specialist team calls you back.",
+      "better": "I'm going to provide you with a reference number now, and the specialist team will use this to track your issue. They will contact you within two working days to provide a resolution."
+    }
+  ]
+}

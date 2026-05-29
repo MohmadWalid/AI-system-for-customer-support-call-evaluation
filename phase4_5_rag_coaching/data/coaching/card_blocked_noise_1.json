@@ -1,0 +1,24 @@
+{
+  "call_id": "card_blocked_noise_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent successfully resolved the customer's issue by providing a clear solution to their problem.",
+    "The agent demonstrated professional, empathetic, and clear communication throughout the conversation.",
+    "The agent showed understanding and provided a solution to the customer's problem, indicating strong problem-solving skills."
+  ],
+  "improvements": [
+    "The agent made an earlier mistake, indicating a need for attention to detail and process adherence.",
+    "There is an opportunity for the agent to improve their ability to recover from mistakes in a more efficient manner.",
+    "The agent may benefit from additional training on handling complex customer inquiries to minimize the need for recovery."
+  ],
+  "rephrasing": [
+    {
+      "original": "None",
+      "better": "This conversation was a great example of the agent's ability to recover from a mistake and still provide a positive experience for the customer. Let's focus on building on this strength and continuing to improve our processes to prevent similar mistakes in the future."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "call_id": "card_blocked_incomplete_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent effectively addressed the customer's urgent situation by transferring them to the fraud team.",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent maintained 100% policy compliance, adhering to all relevant banking regulations.",
+    "The agent's communication skills were exceptional, with a professional, empathetic, and clear tone throughout the interaction.",
+    "The agent effectively recovered from an earlier mistake, demonstrating resilience and adaptability."
+  ],
+  "improvements": [
+    "The agent did not resolve the customer's issue, instead transferring them to the fraud team without fully addressing their concerns.",
+    "The agent could have provided more context or explanation for the transfer to the fraud team, potentially alleviating customer anxiety.",
+    "The agent may benefit from further training on issue resolution, particularly in situations where a transfer is necessary."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not resolve the issue but provided clear next steps by transferring the customer to the fraud team.",
+      "better": "While I was unable to resolve your issue today, I've transferred you to our fraud team who will be able to assist you further. They will work to resolve your issue as soon as possible."
+    }
+  ]
+}

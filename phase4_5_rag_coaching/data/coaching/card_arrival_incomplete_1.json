@@ -1,0 +1,32 @@
+{
+  "call_id": "card_arrival_incomplete_1",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 3,
+  "strengths": [
+    "The agent's communication was professional and polite, demonstrating a good foundation in verbal skills.",
+    "The agent was able to transfer the customer to the card services team, indicating a basic understanding of escalation procedures.",
+    "The agent's tone remained calm and composed throughout the call, even in the face of a challenging customer issue."
+  ],
+  "improvements": [
+    "The agent needs to improve their ability to acknowledge and empathize with customers' concerns in a timely manner.",
+    "The agent must gather necessary information before transferring customers to other teams, ensuring a smooth handoff.",
+    "The agent should provide clear explanations and next steps to customers, reducing confusion and improving overall satisfaction."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent's initial response was a standard greeting without acknowledging the customer's concern.",
+      "better": "I understand you're reaching out about an issue with your account. Can you tell me more about what's going on so I can try to assist you?"
+    },
+    {
+      "original": "The agent refused to confirm the address on file and transferred the customer without addressing the request.",
+      "better": "I'd be happy to help you with that. Can you confirm your address with me so I can make sure we have the most up-to-date information on file?"
+    },
+    {
+      "original": "The agent transferred the customer without explaining what the card services team would do or when the issue would be resolved.",
+      "better": "I'm going to transfer you to our card services team, who will be able to assist you further. They'll be able to review your account and provide a timeline for resolution. Is that okay with you?"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "call_id": "wrong_amount_of_cash_received_recovery_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent initially provided incorrect information but quickly corrected it and resolved the issue.",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent demonstrated excellent communication skills, providing clear and professional explanations throughout the call.",
+    "The agent showed a high level of resolution, taking action to report the ATM cash discrepancy and providing clear next steps for resolution.",
+    "The agent recovered well from an earlier mistake, correcting the issue promptly and continuing to assist the customer."
+  ],
+  "improvements": [
+    "The agent should strive to provide accurate information initially, rather than correcting it later in the call.",
+    "The agent should consider handling issues over the phone whenever possible, rather than suggesting a branch visit.",
+    "The agent should aim to maintain a higher level of policy compliance, currently at 83.3%."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent suggested visiting the branch instead of handling the issue over the phone.",
+      "better": "I can assist you with resolving the issue over the phone today, or if you'd prefer, I can schedule an appointment for you to visit the branch at your convenience."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "call_id": "transfer_not_received_good_1",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent demonstrated excellent policy compliance, adhering to all relevant banking policies throughout the call.",
+    "The agent provided clear and concise communication, ensuring the customer understood the solution and next steps.",
+    "The agent took proactive action to resolve the issue, raising a payment trace request to resolve the customer's concern."
+  ],
+  "improvements": [
+    "Consider providing more detailed explanations of banking policies and procedures to help customers understand the reasoning behind the solution.",
+    "In the future, try to anticipate and address potential customer concerns or questions before they are asked.",
+    "When providing next steps, consider including a specific timeline or deadline for the customer to expect a resolution."
+  ],
+  "rephrasing": [
+    {
+      "original": "The receiving bank will contact you directly to resolve the issue.",
+      "better": "We've raised a payment trace request, and the receiving bank will be in touch with you within the next 3-5 business days to resolve this matter. In the meantime, if you have any further questions or concerns, please don't hesitate to reach out to us."
+    }
+  ]
+}

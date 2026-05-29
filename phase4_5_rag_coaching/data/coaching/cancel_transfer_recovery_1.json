@@ -1,0 +1,28 @@
+{
+  "call_id": "cancel_transfer_recovery_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent initially missed offering a recall request but quickly corrected the mistake and provided a clear next steps.",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent successfully resolved the customer's issue by raising a formal recall request and providing clear next steps.",
+    "The agent's communication was professional, empathetic, and clear, showing a high level of customer service skills.",
+    "The agent recovered from an earlier mistake, demonstrating adaptability and resilience."
+  ],
+  "improvements": [
+    "The agent did not immediately acknowledge and empathize with the customer's concern in the first 30 seconds.",
+    "The agent started by asking for information before acknowledging the customer's concern.",
+    "The agent could improve their initial response to immediately address the customer's concern and provide empathy."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not immediately acknowledge and empathize with the customer's concern in the first 30 seconds.",
+      "better": "The agent could improve their initial response by acknowledging the customer's concern within the first 30 seconds and providing empathy to show understanding and support."
+    },
+    {
+      "original": "The agent started by asking for information before acknowledging the customer's concern.",
+      "better": "A more effective approach would be to acknowledge the customer's concern first and then ask for additional information to better understand their issue."
+    }
+  ]
+}

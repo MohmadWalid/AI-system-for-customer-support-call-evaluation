@@ -1,0 +1,28 @@
+{
+  "call_id": "card_arrival_recovery_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent initially missed acknowledging and empathizing with the customer but quickly corrected it by verifying the customer's identity and addressing their concern.",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent provided a clear solution and next steps for the customer to receive their card, achieving a 100% Resolution score.",
+    "The agent was professional, empathetic, and clear in their communication, showing understanding and providing a helpful solution, achieving a 100% Communication score.",
+    "The agent was able to recover from an earlier mistake, demonstrating adaptability and a willingness to correct their approach."
+  ],
+  "improvements": [
+    "The agent initially missed acknowledging and empathizing with the customer, which is a critical step in building rapport and setting a positive tone for the conversation.",
+    "The agent should strive to maintain a high level of Policy Compliance, aiming for 100% adherence to established rules and procedures.",
+    "The agent should aim to consistently acknowledge and empathize with customers from the initial greeting, setting a positive tone for the conversation."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not acknowledge or empathize with the customer in the initial greeting.",
+      "better": "The agent could improve by acknowledging the customer's concern and showing empathy from the start of the conversation, setting a positive tone for the interaction."
+    },
+    {
+      "original": "Policy  : Rule 1: Acknowledge and Empathize",
+      "better": "Policy  : Rule 1: Acknowledge and Empathize with the customer within the first 30 seconds of the conversation to establish a positive rapport."
+    }
+  ]
+}

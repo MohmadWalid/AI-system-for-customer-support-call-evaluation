@@ -1,0 +1,28 @@
+{
+  "call_id": "failed_card_payment_bad_2",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 3,
+  "strengths": [
+    "The agent's responses were clear and professional, indicating a good understanding of the bank's policies and procedures.",
+    "The agent was able to maintain a neutral tone throughout the conversation, which is in line with the issue class.",
+    "The agent's responses were concise and to the point, indicating a good ability to communicate efficiently."
+  ],
+  "improvements": [
+    "The agent needs to improve their ability to acknowledge and empathize with customers, particularly in the initial response.",
+    "The agent should provide clear explanations of next steps and timelines for resolution to ensure customer satisfaction.",
+    "The agent should escalate issues to a supervisor or specialized team when necessary, especially in urgent situations."
+  ],
+  "rephrasing": [
+    {
+      "original": "First National, what's your query?",
+      "better": "I apologize for the inconvenience you're experiencing, Mr./Ms. [Customer Name]. Can you please tell me more about the issue you're facing with your account?"
+    },
+    {
+      "original": "Just try again in a few hours, these things usually clear. Sorry, not much else I can do.",
+      "better": "I understand that you need to make a rent payment as soon as possible. I'd like to offer to escalate your issue to our supervisor team, who can provide a more detailed explanation of the next steps and a timeline for resolution. Would you like me to do that?"
+    }
+  ]
+}

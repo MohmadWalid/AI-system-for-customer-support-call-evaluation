@@ -1,0 +1,32 @@
+{
+  "call_id": "card_blocked_bad_1",
+  "fine_label_predicted": "contactless_not_working",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 4,
+  "strengths": [
+    "The agent maintained a somewhat professional tone throughout the call, which is a positive aspect of their communication skills.",
+    "The agent was able to identify the issue as a contactless payment problem, which shows they were paying attention to the customer's concern.",
+    "The agent offered to have the customer come into a branch for further assistance, which demonstrates a willingness to help the customer."
+  ],
+  "improvements": [
+    "The agent needs to verify the customer's card details before proceeding with troubleshooting, as per policy.",
+    "The agent should walk the customer through basic troubleshooting steps before suggesting a visit to a branch.",
+    "The agent must check if the customer's card has been blocked or suspended and escalate the issue to a specialist if necessary."
+  ],
+  "rephrasing": [
+    {
+      "original": "I'm not sure if your card is blocked, but you can come into a branch and we'll take a look.",
+      "better": "I'd like to check if your card has been blocked or suspended. Can you please confirm your card number and expiration date so I can look into this further? If it has been blocked, I can assist you with unblocking it or escalate the issue to a specialist if needed."
+    },
+    {
+      "original": "Have you tried turning your contactless payment off and on again? If that doesn't work, you can come into a branch and we'll help you troubleshoot further.",
+      "better": "Let's go through some basic troubleshooting steps together. Can you please try turning your contactless payment off and on again? If that doesn't resolve the issue, I can guide you through some additional steps or offer alternative solutions. If we're unable to resolve the issue, I can also offer to have you come into a branch for further assistance."
+    },
+    {
+      "original": "I'm not able to see if your card is blocked, but I can offer to have you come into a branch and we'll take a look.",
+      "better": "I'd like to check if your card has been blocked or suspended. Can you please confirm your card number and expiration date so I can look into this further? If it has been blocked, I can assist you with unblocking it or escalate the issue to a specialist if needed. If not, I can guide you through some additional troubleshooting steps or offer alternative solutions."
+    }
+  ]
+}

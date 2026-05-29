@@ -1,0 +1,24 @@
+{
+  "call_id": "disputed_charge_good_1",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent successfully resolved the customer's issue by raising a formal dispute, placing a temporary hold on the card, and providing a clear next steps and timeline for the investigation and refund.",
+    "The agent's communication was professional, empathetic, and clear, showing understanding of the customer's concern and providing transparent information throughout the conversation.",
+    "The agent demonstrated 100% policy compliance, adhering to all relevant policies and procedures."
+  ],
+  "improvements": [
+    "Consider asking more clarifying questions to ensure a thorough understanding of the customer's issue and to gather all necessary information before escalating the dispute.",
+    "When providing next steps and timelines, be sure to also offer a clear point of contact for the customer to follow up with if they have any further questions or concerns.",
+    "In the future, consider proactively offering a temporary credit or alternative payment method to the customer while their dispute is being investigated."
+  ],
+  "rephrasing": [
+    {
+      "original": "none",
+      "better": "This call was a great example of how to effectively handle a dispute and provide excellent customer service. However, there are a few areas for improvement that we can discuss in the coaching session."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "call_id": "card_arrival_ambiguous_1",
+  "fine_label_predicted": "card_arrival",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 3,
+  "strengths": [
+    "The agent's responses were generally clear and professional, indicating good communication skills.",
+    "The agent was able to identify the customer's concern and provide a basic solution, such as suggesting a callback.",
+    "The agent was aware of the customer's issue and attempted to provide some assistance."
+  ],
+  "improvements": [
+    "The agent needs to acknowledge the customer's concern and express empathy for the inconvenience caused in the initial response.",
+    "The agent should offer to assist with tracking the package or provide information on how to track the package, and offer to replace the card if necessary.",
+    "The agent should provide a concrete solution or offer to replace the card immediately, rather than suggesting a callback without further assistance."
+  ],
+  "rephrasing": [
+    {
+      "original": "Hi, thanks for calling. What can I do for you?",
+      "better": "Thank you for reaching out about your missing card. I understand how frustrating this must be for you. Can you please tell me more about your issue so I can assist you?"
+    },
+    {
+      "original": "It's probably still in the post. These can get delayed sometimes.",
+      "better": "I apologize for the delay. I'd be happy to help you track the package. Can you please provide me with your order number or the tracking number, and I'll look into it for you? If the card is still missing, I can also offer to replace it for you."
+    },
+    {
+      "original": "Give us a call back and we can look at options at that point.",
+      "better": "I apologize for the inconvenience. I can offer to replace the card for you immediately. If you'd like, I can also provide you with a temporary card or assistance with tracking the package. Would you prefer one of these options?"
+    }
+  ]
+}

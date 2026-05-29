@@ -1,0 +1,28 @@
+{
+  "call_id": "cancel_transfer_ambiguous_1",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 2,
+  "strengths": [
+    "The agent's communication was mostly professional and clear, indicating good verbal skills.",
+    "The agent took some action and offered to follow up, showing a willingness to resolve the issue.",
+    "The agent's tone was mostly clear, suggesting good control over their emotions during the call."
+  ],
+  "improvements": [
+    "The agent needs to improve their ability to acknowledge and empathize with customers in the first 30 seconds of the call.",
+    "The agent should provide customers with a clear reference number immediately after gathering necessary information.",
+    "The agent should strive to provide a clear resolution to the customer's issue, rather than just taking action and offering to follow up."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not acknowledge or empathize with the customer in the first 30 seconds.",
+      "better": "I understand you're experiencing some issues, and I'm here to help. Can you please tell me more about what's going on?"
+    },
+    {
+      "original": "The agent did not provide the customer with a reference number immediately.",
+      "better": "I've taken note of your account information, and I've assigned a reference number (XXXXX) to track your issue. I'll have an update for you shortly."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "call_id": "card_blocked_ambiguous_2",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent took action by submitting a request to remove the system flag and provided clear next steps.",
+    "The agent's communication was professional, empathetic, and clear, providing a helpful explanation and reasonable timeframe for resolution.",
+    "The agent recovered from an earlier mistake, demonstrating resilience and adaptability."
+  ],
+  "improvements": [
+    "The agent failed to acknowledge or empathize with the customer in the initial greeting, which is a key policy requirement.",
+    "The agent's initial response was too focused on providing a standard greeting without addressing the customer's concern.",
+    "The agent could benefit from more proactive communication to prevent mistakes and resolve issues more efficiently."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not acknowledge or empathize with the customer in the initial greeting.",
+      "better": "I apologize for the inconvenience you're experiencing. I'm here to help you resolve this issue. Can you please tell me more about what's not working for you?"
+    },
+    {
+      "original": "The agent's initial response was a standard greeting without acknowledging the customer's concern or showing empathy.",
+      "better": "Hello, thank you for reaching out to us. I understand that you're having some trouble with [issue]. I'm here to listen and help you find a solution."
+    }
+  ]
+}

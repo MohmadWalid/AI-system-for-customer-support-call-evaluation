@@ -1,0 +1,24 @@
+{
+  "call_id": "cancel_transfer_noise_1",
+  "fine_label_predicted": "cancel_transfer",
+  "recovered": true,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent successfully initiated a recall request for the transfer, demonstrating a clear understanding of the policy and procedures.",
+    "The agent provided clear next steps to the customer, ensuring they were informed and empowered to take action.",
+    "The agent recovered from an earlier mistake, showcasing their ability to think critically and adapt to challenging situations."
+  ],
+  "improvements": [
+    "To further improve, the agent could benefit from asking more clarifying questions to ensure they fully understand the customer's situation and needs.",
+    "The agent could also work on providing more proactive solutions to the customer, rather than simply following the standard procedure.",
+    "In the future, the agent could focus on actively listening to the customer and paraphrasing their concerns to ensure understanding and build trust."
+  ],
+  "rephrasing": [
+    {
+      "original": "None",
+      "better": "This call is being recorded for quality and training purposes. Is there anything else I can assist you with today?"
+    }
+  ]
+}

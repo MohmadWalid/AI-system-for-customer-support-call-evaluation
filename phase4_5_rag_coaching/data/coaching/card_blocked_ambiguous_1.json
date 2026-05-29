@@ -1,0 +1,36 @@
+{
+  "call_id": "card_blocked_ambiguous_1",
+  "fine_label_predicted": "card_not_working",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 4,
+  "strengths": [
+    "The agent's communication was generally professional and empathetic, which is essential for building trust with customers.",
+    "The agent attempted to offer an alternative payment method, showing a willingness to help the customer find a solution.",
+    "The agent was willing to escalate the issue, indicating a willingness to seek additional support when needed."
+  ],
+  "improvements": [
+    "The agent needs to explicitly verify the card status before proceeding with troubleshooting or offering alternative solutions.",
+    "The agent should ask for specific details about the error to better understand the issue and provide a more accurate solution.",
+    "The agent should attempt to troubleshoot common issues before escalating the issue to a supervisor or other support team."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent mentioned a flag on the card but did not explicitly verify its status.",
+      "better": "I see that there's a flag on your card. Can you confirm if it's active, expired, or blocked? This will help me better understand the issue and provide a solution."
+    },
+    {
+      "original": "The agent did not ask for specific details about the error (e.g., transaction type, location, error messages).",
+      "better": "Can you please tell me more about the error you're experiencing? For example, what type of transaction were you trying to make, where were you when it happened, and what error message did you receive?"
+    },
+    {
+      "original": "The agent did not attempt to troubleshoot common issues (e.g., damaged card, incorrect PIN, sufficient funds).",
+      "better": "Before we escalate this issue, let's try to troubleshoot some common problems. Can you confirm that your card is not damaged, that you're using the correct PIN, and that you have sufficient funds in your account?"
+    },
+    {
+      "original": "The agent only mentioned making a note but did not ensure follow-up.",
+      "better": "I'll make a note of this issue and follow up with you within the next [timeframe, e.g., 24 hours] to ensure that it's been resolved to your satisfaction. Would you like me to send you a confirmation email or call you back at a specific time?"
+    }
+  ]
+}

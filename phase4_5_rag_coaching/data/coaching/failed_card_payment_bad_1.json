@@ -1,0 +1,36 @@
+{
+  "call_id": "failed_card_payment_bad_1",
+  "fine_label_predicted": "declined_transfer",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 4,
+  "strengths": [
+    "The agent's tone was somewhat helpful, indicating some level of customer-centric approach.",
+    "The agent was able to communicate the general process for resolving declined transfers, showing some understanding of the policy.",
+    "The agent's suggestion to 'try again later' or 'order a new card' showed some attempt to provide a potential solution."
+  ],
+  "improvements": [
+    "The agent needs to acknowledge and apologize for the inconvenience caused to the customer at the beginning of the call.",
+    "The agent must gather relevant transaction details from the customer to facilitate investigation and troubleshooting.",
+    "The agent should thoroughly verify the customer's card and account status to provide a clear explanation or guidance on how to resolve potential issues."
+  ],
+  "rephrasing": [
+    {
+      "original": "The card system does not show anything obvious.",
+      "better": "I'd like to investigate further. Can you please confirm your card number and the exact date of the declined transaction? I'll do my best to help you resolve this issue."
+    },
+    {
+      "original": "Just try again later.",
+      "better": "I apologize for the inconvenience. It's possible that there's a temporary issue with the transaction. Can you please try again and let me know if you continue to experience any issues? If not, I'll be happy to assist you further."
+    },
+    {
+      "original": "You can just order a new card.",
+      "better": "I understand that you're experiencing difficulties with your current card. Before we proceed, I'd like to verify your account status and card details to ensure that there aren't any issues that can be resolved without replacing the card. Can you please confirm your account information with me?"
+    },
+    {
+      "original": "I'll just have you try again later.",
+      "better": "I apologize for the inconvenience. I'm going to escalate this issue to a senior agent who can assist you further. They'll be able to investigate the declined transaction and provide a more detailed explanation of what's causing the issue."
+    }
+  ]
+}

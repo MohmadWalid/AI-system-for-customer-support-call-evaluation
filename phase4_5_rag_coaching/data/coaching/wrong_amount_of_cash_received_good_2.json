@@ -1,0 +1,24 @@
+{
+  "call_id": "wrong_amount_of_cash_received_good_2",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent demonstrated exceptional policy compliance, adhering to all guidelines throughout the call.",
+    "The agent effectively recovered from an earlier mistake, showcasing their ability to think on their feet and adapt to challenging situations.",
+    "The agent's communication skills were outstanding, with clear, professional, and empathetic responses that put the customer at ease."
+  ],
+  "improvements": [
+    "The agent could benefit from taking a moment to clarify the customer's issue before providing a solution, ensuring they fully understand the problem.",
+    "In the future, the agent could work on providing more specific and detailed next steps to the customer, reducing the likelihood of follow-up calls.",
+    "The agent could also consider asking more open-ended questions to gather more information and provide a more personalized solution."
+  ],
+  "rephrasing": [
+    {
+      "original": "I'm going to go ahead and process the refund for you.",
+      "better": "I'd like to process the refund for you right away. May I confirm the details to ensure everything is accurate?"
+    }
+  ]
+}

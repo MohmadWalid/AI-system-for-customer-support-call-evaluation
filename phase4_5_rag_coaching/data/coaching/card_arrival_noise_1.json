@@ -1,0 +1,24 @@
+{
+  "call_id": "card_arrival_noise_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent provided a clear explanation of the card's status, expected delivery time, and next steps to take if the card doesn't arrive, resulting in a high Resolution score.",
+    "The agent's communication was professional, empathetic, and clear throughout the conversation, leading to a perfect Communication score.",
+    "The agent demonstrated excellent recovery skills after making an earlier mistake, showcasing their ability to adapt and provide a positive customer experience."
+  ],
+  "improvements": [
+    "To further enhance their communication skills, the agent could work on providing more specific examples or scenarios to help customers understand complex information.",
+    "The agent could benefit from practicing active listening skills, such as rephrasing or summarizing the customer's concerns to ensure they fully understand the issue.",
+    "To improve their overall efficiency, the agent could focus on asking more targeted questions to gather relevant information from the customer at the beginning of the call."
+  ],
+  "rephrasing": [
+    {
+      "original": "The card is expected to arrive within 7-10 business days.",
+      "better": "We anticipate the card to arrive within 7-10 business days. If you haven't received it by then, please let us know and we'll be happy to look into it further."
+    }
+  ]
+}

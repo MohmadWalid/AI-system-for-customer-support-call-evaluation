@@ -1,0 +1,24 @@
+{
+  "call_id": "card_arrival_good_2",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent provided a clear explanation of the delivery process, effectively communicating with the customer.",
+    "The agent checked on the status of the customer's card, demonstrating a proactive approach to resolving the issue.",
+    "The agent offered a solution for if the card doesn't arrive within a certain timeframe, showing a commitment to customer satisfaction."
+  ],
+  "improvements": [
+    "Consider asking more clarifying questions to ensure the customer's needs are fully understood before proceeding with the solution.",
+    "When explaining the delivery process, the agent could provide more specific details about the timeframe and any potential delays.",
+    "In the future, the agent could offer additional resources or support to the customer, such as a follow-up call or email, to ensure the issue is fully resolved."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent could offer additional resources or support to the customer, such as a follow-up call or email, to ensure the issue is fully resolved.",
+      "better": "Would you like me to schedule a follow-up call or email to check on the status of your card and ensure everything is resolved to your satisfaction?"
+    }
+  ]
+}

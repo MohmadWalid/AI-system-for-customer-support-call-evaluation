@@ -1,0 +1,28 @@
+{
+  "call_id": "cancel_transfer_recovery_2",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent initially failed to mention the recall request option but corrected it promptly after the customer's reminder.",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent successfully initiated a recall for the incorrect transfer and provided clear next steps.",
+    "The agent was professional, empathetic, and clear throughout the conversation, apologizing for the initial confusion and providing a clear explanation of the process.",
+    "The agent recovered from an earlier mistake by promptly correcting the recall request option after the customer's reminder."
+  ],
+  "improvements": [
+    "The agent should acknowledge the customer's concern about canceling the payment to show empathy and understanding.",
+    "The agent should provide a clear explanation of the next steps initially to avoid confusion and ensure the customer feels informed.",
+    "The agent should proactively mention the recall request option to avoid having to correct it later in the conversation."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent didn't acknowledge the customer's concern about canceling the payment and didn't provide a clear explanation of the next steps initially.",
+      "better": "The agent could improve by acknowledging the customer's concern about canceling the payment and providing a clear explanation of the next steps from the beginning to ensure a smooth resolution."
+    },
+    {
+      "original": "The agent didn't mention the recall request option initially.",
+      "better": "The agent could improve by proactively mentioning the recall request option as part of the initial explanation to avoid confusion and ensure the customer feels informed."
+    }
+  ]
+}

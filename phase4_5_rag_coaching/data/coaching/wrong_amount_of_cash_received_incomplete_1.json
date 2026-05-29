@@ -1,0 +1,28 @@
+{
+  "call_id": "wrong_amount_of_cash_received_incomplete_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent initially missed empathizing with the customer but recovered by showing concern and apologizing later in the conversation.",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent's communication was professional, empathetic, and clear throughout the conversation.",
+    "The agent recovered from an earlier mistake by showing concern and apologizing later in the conversation.",
+    "The agent maintained a high level of communication skills, which is essential for building customer trust."
+  ],
+  "improvements": [
+    "The agent failed to acknowledge or empathize with the customer in the first 30 seconds, which can lead to a negative customer experience.",
+    "The agent did not resolve the issue but transferred the customer to another team for resolution, indicating a lack of problem-solving skills.",
+    "The agent needs to work on resolving issues independently to improve customer satisfaction and reduce the need for transfers."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent started with a standard greeting but did not address the customer's concern immediately.",
+      "better": "I appreciate you reaching out to us today. Can you please tell me more about the issue you're experiencing so I can better understand how I can assist you?"
+    },
+    {
+      "original": "The agent did not resolve the issue but transferred the customer to another team for resolution.",
+      "better": "I apologize that I couldn't resolve the issue for you today. I'm going to escalate this to our specialist team who will be able to provide a more in-depth solution. They'll be in touch with you shortly to discuss further."
+    }
+  ]
+}

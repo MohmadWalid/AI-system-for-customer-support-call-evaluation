@@ -1,0 +1,24 @@
+{
+  "call_id": "disputed_charge_recovery_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent initially accessed account details before verifying the customer's identity but quickly corrected this procedural error.",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent successfully resolved the customer's issue by verifying their identity, investigating the account, and raising a dispute for the unauthorized charge.",
+    "The agent's communication was professional, empathetic, and clear throughout the conversation.",
+    "The agent demonstrated the ability to recover from a procedural error and correct it promptly."
+  ],
+  "improvements": [
+    "The agent accessed account details before verifying the customer's identity, which is a procedural error that can compromise customer data security.",
+    "The agent should ensure that they follow the correct procedure of verifying customer identity before accessing account details to maintain policy compliance.",
+    "The agent should be more mindful of their actions and correct procedural errors as soon as they occur to prevent potential issues."
+  ],
+  "rephrasing": [
+    {
+      "original": "accessed account details before verifying customer's identity",
+      "better": "I'm going to need to verify your identity before I can access your account details to ensure your security and comply with our policies."
+    }
+  ]
+}

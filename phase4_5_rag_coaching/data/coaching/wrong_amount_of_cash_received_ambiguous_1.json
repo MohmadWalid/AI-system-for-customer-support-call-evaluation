@@ -1,0 +1,32 @@
+{
+  "call_id": "wrong_amount_of_cash_received_ambiguous_1",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 3,
+  "strengths": [
+    "The agent's communication was professional and clear, indicating a strong foundation in verbal skills.",
+    "The agent was able to maintain a calm and composed tone throughout the conversation, which is essential for de-escalating potential conflicts.",
+    "The agent demonstrated a basic understanding of the customer's concern and attempted to provide a solution, showing a willingness to help."
+  ],
+  "improvements": [
+    "The agent needs to improve their ability to acknowledge and empathize with customers within the first 30 seconds of the conversation.",
+    "The agent should provide clear explanations and next steps to ensure customers understand the resolution process and what to expect.",
+    "The agent should be more proactive in offering solutions and alternatives to resolve the customer's issue."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not acknowledge or empathize with the customer within the first 30 seconds of the conversation.",
+      "better": "The agent should respond with a empathetic statement, such as 'I apologize for the inconvenience you're experiencing with your ATM transaction. Can you please tell me more about what happened?'"
+    },
+    {
+      "original": "The agent downplayed the issue by stating 'These things do happen occasionally with ATMs' and only offered to make a note.",
+      "better": "The agent should provide a clear explanation of the issue and offer a solution, such as 'I understand that this can be frustrating. I'd like to investigate this further and see what I can do to resolve the issue. Can you please confirm your account information so I can look into this for you?'"
+    },
+    {
+      "original": "The agent did not provide a clear timeline for resolution or follow-up, simply stating 'Call back if you don't hear anything.'",
+      "better": "The agent should provide a clear timeline for resolution, such as 'I'll make sure to investigate this further and get back to you within the next 24-48 hours. If you don't hear from me by then, please don't hesitate to call back and I'll be happy to assist you further.'"
+    }
+  ]
+}

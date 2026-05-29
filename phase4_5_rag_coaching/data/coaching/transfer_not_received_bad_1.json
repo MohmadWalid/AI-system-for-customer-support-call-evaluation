@@ -1,0 +1,32 @@
+{
+  "call_id": "transfer_not_received_bad_1",
+  "fine_label_predicted": "transfer_not_received_by_recipient",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 3,
+  "strengths": [
+    "The agent was able to identify the customer's concern and acknowledge their issue.",
+    "The agent attempted to provide a brief explanation for the delay in the transfer.",
+    "The agent was able to maintain a somewhat professional tone throughout the conversation."
+  ],
+  "improvements": [
+    "The agent failed to check the transfer status using the bank's systems and tools, resulting in a lack of resolution for the customer.",
+    "The agent did not escalate the issue to a specialized investigation team or a senior agent, leaving the customer without a clear next step.",
+    "The agent suggested that the customer might have entered the wrong details without verifying first, which came across as dismissive and unhelpful."
+  ],
+  "rephrasing": [
+    {
+      "original": "These things happen, and there's not much I can do.",
+      "better": "I understand that this is frustrating. Let me check the status of your transfer using our system to see if there's any update or issue that I can assist you with."
+    },
+    {
+      "original": "You'll have to wait for two weeks, and then we can look into it further.",
+      "better": "I apologize for the delay. I'd like to escalate this issue to our investigation team, who will look into it further and provide you with a more detailed update. Would you like me to do that for you?"
+    },
+    {
+      "original": "Maybe you entered the wrong details.",
+      "better": "Before we proceed, let me verify the transfer details with you to ensure everything is accurate. Can you please confirm the recipient's name and account number?"
+    }
+  ]
+}

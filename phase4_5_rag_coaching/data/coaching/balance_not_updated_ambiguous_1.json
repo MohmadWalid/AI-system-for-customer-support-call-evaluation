@@ -1,0 +1,28 @@
+{
+  "call_id": "balance_not_updated_ambiguous_1",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 1,
+  "strengths": [
+    "The agent's communication was acceptable and provided some reassurance to the customer.",
+    "The agent was able to maintain a neutral tone throughout the call.",
+    "The agent was able to provide some basic information to the customer."
+  ],
+  "improvements": [
+    "The agent needs to improve their ability to take action, provide a solution, or give clear next steps to resolve the customer's issue.",
+    "The agent should work on acknowledging and empathizing with the customer's concern from the start of the call.",
+    "The agent's communication could improve by providing clear explanations and following up with the customer."
+  ],
+  "rephrasing": [
+    {
+      "original": "Hi, First National, how can I help?",
+      "better": "Hello, thank you for reaching out to First National. I'm here to help you with your concern. Can you please tell me more about the issue you're experiencing?"
+    },
+    {
+      "original": "The agent did not take action, provide a solution, or give clear next steps to resolve the customer's issue.",
+      "better": "I understand that we haven't been able to resolve your issue yet. Let me see what I can do to help. Can I offer you a few options or put you in touch with someone who can assist you further?"
+    }
+  ]
+}

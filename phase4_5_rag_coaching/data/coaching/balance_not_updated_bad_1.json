@@ -1,0 +1,32 @@
+{
+  "call_id": "balance_not_updated_bad_1",
+  "fine_label_predicted": "balance_not_updated_after_cheque_or_cash_deposit",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 4,
+  "strengths": [
+    "The agent remained patient and calm throughout the call, which is essential for maintaining a positive customer experience.",
+    "The agent attempted to provide a solution, even if it was not entirely clear or effective.",
+    "The agent did ask some questions to clarify the customer's issue, demonstrating an effort to understand the problem."
+  ],
+  "improvements": [
+    "The agent needs to improve their ability to acknowledge and empathize with customers, which is crucial for building trust and rapport.",
+    "The agent should investigate the status of the deposit and provide clear updates to the customer, rather than simply stating a timeframe.",
+    "The agent must gather transaction details from the customer to better understand the issue and provide a more effective solution."
+  ],
+  "rephrasing": [
+    {
+      "original": "It could take until the end of the day or tomorrow for the deposit to be updated.",
+      "better": "I'd like to check on the status of your deposit. Can you please hold for a moment while I investigate? I'll let you know as soon as I have an update."
+    },
+    {
+      "original": "I'm not sure what's going on with your deposit. Can you just wait and it should be updated soon?",
+      "better": "I apologize for the inconvenience. Can you please provide me with more details about the deposit, such as the date and amount? I'll do my best to look into this further and provide a clear update for you."
+    },
+    {
+      "original": "There's nothing else I can do at this time. You'll just have to wait until the deposit is updated.",
+      "better": "I understand that you're concerned about the status of your deposit. I'd like to escalate this issue to my supervisor, who will work with you to resolve this as quickly as possible. Can you please hold for a moment while I transfer the call?"
+    }
+  ]
+}

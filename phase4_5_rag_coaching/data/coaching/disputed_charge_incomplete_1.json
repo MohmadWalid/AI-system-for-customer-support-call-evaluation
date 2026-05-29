@@ -1,0 +1,28 @@
+{
+  "call_id": "disputed_charge_incomplete_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent recovered by transferring the customer to the disputes team.",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent's communication was professional, clear, and empathetic throughout the conversation.",
+    "The agent recovered from an earlier mistake by transferring the customer to the disputes team.",
+    "The agent maintained a high level of communication, scoring 100 in the communication category."
+  ],
+  "improvements": [
+    "The agent failed to acknowledge or empathize with the customer's concern within the first 30 seconds, violating Rule 1: Acknowledge and Empathize.",
+    "The agent did not resolve the issue but transferred the customer to another team for further assistance, resulting in a low Resolution score of 40.",
+    "The agent's inability to resolve the issue led to a low Final Grade of 73.7/100."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not acknowledge or empathize with the customer's concern.",
+      "better": "The agent could improve by acknowledging and empathizing with the customer's concern within the first 30 seconds, for example: 'I apologize for the inconvenience you're experiencing. Can you tell me more about what's not meeting your expectations?'"
+    },
+    {
+      "original": "The agent did not resolve the issue but transferred the customer to another team for further assistance.",
+      "better": "The agent could have explored additional solutions or options to resolve the issue before transferring the customer to another team, for example: 'I understand that we can't resolve this issue over the phone. However, I'd like to offer you a few more options to consider before we transfer you to our disputes team.'"
+    }
+  ]
+}

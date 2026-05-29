@@ -1,0 +1,24 @@
+{
+  "call_id": "transfer_not_received_recovery_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent initially provided a potentially misleading response but later corrected it and properly raised a payment trace.",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent successfully resolved the customer's issue by raising a payment trace and providing clear next steps.",
+    "The agent's communication was professional, empathetic, and clear, with a tone that was apologetic and helpful throughout the conversation.",
+    "The agent recovered from an earlier mistake, correcting their response and providing a proper resolution."
+  ],
+  "improvements": [
+    "The agent should immediately acknowledge the issue's severity and provide a clear explanation of next steps in response to customer concerns.",
+    "The agent should avoid providing potentially misleading responses and instead focus on providing accurate and clear information.",
+    "The agent should strive to maintain a consistent level of policy compliance, aiming for 100% in future interactions."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent told the customer to wait and didn't immediately acknowledge the issue's severity or provide a clear explanation of next steps.",
+      "better": "I apologize for the delay, and I want to assure you that we're taking immediate action to resolve this issue. I'll be happy to walk you through the next steps and provide you with a clear timeline for resolution."
+    }
+  ]
+}

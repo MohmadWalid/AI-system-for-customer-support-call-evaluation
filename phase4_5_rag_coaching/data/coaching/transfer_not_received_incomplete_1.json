@@ -1,0 +1,32 @@
+{
+  "call_id": "transfer_not_received_incomplete_1",
+  "fine_label_predicted": "transfer_not_received_by_recipient",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 3,
+  "strengths": [
+    "The agent's communication was mostly professional, indicating a good foundation in communication skills.",
+    "The agent was able to identify that the international team would be best placed to handle the issue, showing some understanding of the escalation process.",
+    "The agent transferred the customer to the international team in a timely manner, indicating efficiency in handling the call."
+  ],
+  "improvements": [
+    "The agent needs to verify transfer details with the customer, such as date and time of the transfer, recipient's account number, and transfer amount, before transferring them to another team.",
+    "The agent should provide an estimated timeframe for when the transfer should arrive in the recipient's account, even if it's a general estimate.",
+    "The agent must take ownership of the issue and ensure it's properly escalated or investigated before transferring the customer to another team."
+  ],
+  "rephrasing": [
+    {
+      "original": "The international team would be best placed to tell you when the transfer should arrive.",
+      "better": "I can provide you with a general estimate of when the transfer should arrive, but the international team will be able to give you a more accurate timeframe. Would you like me to note this down for you?"
+    },
+    {
+      "original": "I'll transfer you to the international team.",
+      "better": "Before I transfer you to the international team, can I just confirm a few details with you? Can you please confirm the date and time of the transfer, the recipient's account number, and the transfer amount? I'll also make a note of this for the international team to follow up on."
+    },
+    {
+      "original": "I'll transfer you to the international team.",
+      "better": "I'm going to transfer you to the international team, but I want to make sure that we've properly escalated this issue. Can I just summarize what we've discussed so far and what we're expecting the international team to investigate? This way, we can ensure that we're providing the best possible support for you."
+    }
+  ]
+}

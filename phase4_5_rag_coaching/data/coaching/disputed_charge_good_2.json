@@ -1,0 +1,24 @@
+{
+  "call_id": "disputed_charge_good_2",
+  "fine_label_predicted": "neutral",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "ok",
+  "violations_count": 0,
+  "strengths": [
+    "The agent successfully resolved the customer's issue, demonstrating strong problem-solving skills and ability to follow policies.",
+    "The agent's communication was professional, empathetic, and clear throughout the conversation, providing a helpful and respectful experience for the customer.",
+    "The agent was 100% compliant with policies, ensuring that the customer's issue was handled in accordance with our procedures."
+  ],
+  "improvements": [
+    "To further improve, the agent could work on asking more clarifying questions to ensure a complete understanding of the customer's issue before proceeding with a resolution.",
+    "The agent could benefit from providing more proactive updates to the customer during the resolution process, keeping them informed of the progress and any next steps.",
+    "In future conversations, the agent could work on using more concise language to explain complex policies and procedures, making it easier for customers to understand."
+  ],
+  "rephrasing": [
+    {
+      "original": "none",
+      "better": "This call does not contain any areas for improvement, but we can discuss opportunities for growth and development in future coaching sessions."
+    }
+  ]
+}

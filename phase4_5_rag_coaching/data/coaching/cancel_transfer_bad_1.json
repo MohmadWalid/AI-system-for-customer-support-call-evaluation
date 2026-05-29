@@ -1,0 +1,13 @@
+{
+  "call_id": "cancel_transfer_bad_1",
+  "fine_label_predicted": "cancel_transfer",
+  "recovered": false,
+  "recovery_note": "",
+  "verdict": "violation",
+  "violations_count": 5,
+  "strengths": [
+    "(parse error — raw response below)"
+  ],
+  "improvements": [],
+  "rephrasing": []
+}

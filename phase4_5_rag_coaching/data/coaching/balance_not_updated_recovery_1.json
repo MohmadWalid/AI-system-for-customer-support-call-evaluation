@@ -1,0 +1,28 @@
+{
+  "call_id": "balance_not_updated_recovery_1",
+  "fine_label_predicted": "neutral",
+  "recovered": true,
+  "recovery_note": "The agent initially failed to empathize but quickly corrected it by verifying the customer's identity and providing a clear explanation.",
+  "verdict": "ok",
+  "violations_count": 1,
+  "strengths": [
+    "The agent successfully resolved the customer's issue by verifying their identity, investigating the transaction, and providing a clear explanation and next steps.",
+    "The agent's communication was professional, empathetic, and clear, showing courtesy and a willingness to help throughout the conversation.",
+    "The agent demonstrated the ability to recover from an earlier mistake, correcting it by verifying the customer's identity and providing a clear explanation."
+  ],
+  "improvements": [
+    "The agent failed to acknowledge or empathize with the customer's concern in the initial greeting.",
+    "The agent could improve their policy compliance by increasing their adherence to the established rules and guidelines.",
+    "The agent could benefit from reviewing the customer's concern and responding accordingly in the initial greeting."
+  ],
+  "rephrasing": [
+    {
+      "original": "The agent did not acknowledge or empathize with the customer's concern in the initial greeting.",
+      "better": "The agent could improve by starting with a greeting that acknowledges and empathizes with the customer's concern, such as: 'Thank you for reaching out to us about your concern. I'd be happy to help you with that.'"
+    },
+    {
+      "original": "The agent started with a standard greeting but did not immediately acknowledge the customer's concern.",
+      "better": "A better approach would be to start with a greeting that acknowledges and empathizes with the customer's concern, such as: 'I'm so sorry to hear that you're experiencing an issue with your account. Can you please tell me more about what's going on?'"
+    }
+  ]
+}
