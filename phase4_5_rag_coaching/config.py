@@ -12,7 +12,7 @@ GROQ_MODEL: str = "meta-llama/llama-4-scout-17b-16e-instruct"
 
 # FAISS / Retrieval
 SIMILARITY_THRESHOLD: float = float(os.getenv("SIMILARITY_THRESHOLD", "0.45"))
-TOP_K: int = int(os.getenv("TOP_K", "3"))
+TOP_K: int = int(os.getenv("TOP_K", "5"))
 
 # Embedding model (local, no API needed)
 EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"

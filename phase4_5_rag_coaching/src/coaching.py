@@ -11,7 +11,6 @@ from config import GROQ_API_KEY, GROQ_MODEL
 
 COACHING_DIR = Path("data/coaching")
 
-#TODO : Revise the whole file acording to the scoring.py and  runtime_rag.py
 
 def generate_coaching_report(call_result: dict) -> dict:
     fine_label      = call_result["fine_label_predicted"]
@@ -30,18 +29,39 @@ def generate_coaching_report(call_result: dict) -> dict:
     else:
         violation_text = "- (none)"
 
+    score = call_result.get("score") or {}
+    policy_compliance = score.get("policy_compliance", "N/A")
+    resolution_score = score.get("issue_resolution", {}).get("score", "N/A")
+    resolution_reason = score.get("issue_resolution", {}).get("reason", "")
+    comm_score = score.get("communication", {}).get("score", "N/A")
+    comm_note = score.get("communication", {}).get("note", "")
+    final_score = score.get("final_score", "N/A")
+    grade = score.get("grade", "N/A")
+
+    recovered = call_result.get("recovered", False)
+    recovery_note = call_result.get("recovery_note", "")
+
+    recovery_addition = ""
+    if recovered:
+        recovery_addition = f"\n- Note: Agent recovered from an earlier mistake.\n    {recovery_note}"
+
     prompt = (
         f"You are a banking call center coach.\n\n"
-        f"Issue class: {fine_label}\n"
-        f"Overall assessment: {overall_summary}\n\n"
-        f"VIOLATIONS found:\n{violation_text}\n\n"
+        f"Issue class: {fine_label}\n\n"
+        f"PERFORMANCE SCORES:\n"
+        f"- Final Grade: {grade} ({final_score}/100)\n"
+        f"- Policy Compliance: {policy_compliance}%\n"
+        f"- Resolution: {resolution_score} — {resolution_reason}\n"
+        f"- Communication: {comm_score} — {comm_note}"
+        f"{recovery_addition}\n\n"
+        f"VIOLATIONS:\n"
+        f"{violation_text}\n\n"
         f"Write a coaching report with exactly these three sections:\n"
         f"1. STRENGTHS: 2-3 bullet points of what the agent did well\n"
         f"2. IMPROVEMENTS: 2-3 bullet points of specific behaviors to fix\n"
-        f"3. REPHRASING: For each violation, write one better alternative phrasing\n\n"
+        f"3. REPHRASING: For each violation, rewrite a better agent response\n\n"
         f"Reply ONLY in this JSON format:\n"
-        f'{{"strengths": ["...", "..."], '
-        f'"improvements": ["...", "..."], '
+        f'{{"strengths": ["...", "..."], "improvements": ["...", "..."], '
         f'"rephrasing": [{{"original": "...", "better": "..."}}]}}'
     )
 
@@ -82,13 +102,15 @@ def generate_coaching_report(call_result: dict) -> dict:
     return {
         "call_id":              call_result["call_id"],
         "fine_label_predicted": fine_label,
-        "classifier_match":     call_result["classifier_match"],
+        "recovered":            recovered,
+        "recovery_note":        recovery_note,
         "verdict":              call_result.get("verdict"),
         "violations_count":     len(violations),
         "strengths":            parsed.get("strengths", []),
         "improvements":         parsed.get("improvements", []),
         "rephrasing":           parsed.get("rephrasing", []),
     }
+
 
 
 def generate_all_reports(results_path: str = "data/results.json") -> None:
