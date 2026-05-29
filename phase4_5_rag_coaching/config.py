@@ -9,7 +9,7 @@ load_dotenv()
 # Groq API
 GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
 GROQ_MODEL: str = "meta-llama/llama-4-scout-17b-16e-instruct"
-GROQ_EXPERIMENT_MODEL: str = "llama-3.1-8b-instant"
+GROQ_EXPERIMENT_MODEL: str = "meta-llama/llama-4-scout-17b-16e-instruct"
 
 # OpenRouter API
 OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")

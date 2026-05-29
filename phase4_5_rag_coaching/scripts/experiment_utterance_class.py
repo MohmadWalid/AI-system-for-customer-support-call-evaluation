@@ -9,8 +9,8 @@ from pathlib import Path
 # Adjust system path to import modules from parent directory
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from openai import OpenAI
-from config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL
+from groq import Groq
+from config import GROQ_API_KEY
 from scripts.transcripts import TRANSCRIPTS
 from src.classifier import ClassifierPipeline
 from scripts.retrievers import class_scoped
@@ -27,11 +27,7 @@ def main():
     print("  Experiment 3: Utterance-Level + Class-Scoped Index")
     print(DIVIDER)
 
-    # Load components
-    client = OpenAI(
-        api_key=OPENROUTER_API_KEY,
-        base_url=OPENROUTER_BASE_URL,
-    )
+    client = Groq(api_key=GROQ_API_KEY)
     classifier = ClassifierPipeline()
 
     total_violations = 0

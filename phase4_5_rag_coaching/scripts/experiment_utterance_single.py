@@ -12,10 +12,10 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import faiss
 import numpy as np
-from openai import OpenAI
+from groq import Groq
 from sentence_transformers import SentenceTransformer
 
-from config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL, EMBEDDING_MODEL
+from config import GROQ_API_KEY, EMBEDDING_MODEL
 from scripts.transcripts import TRANSCRIPTS
 from src.classifier import ClassifierPipeline
 from scripts.retrievers import single_faiss
@@ -45,10 +45,7 @@ def main():
 
     # Load components
     embedder   = SentenceTransformer(EMBEDDING_MODEL)
-    client = OpenAI(
-        api_key=OPENROUTER_API_KEY,
-        base_url=OPENROUTER_BASE_URL,
-    )
+    client     = Groq(api_key=GROQ_API_KEY)
     classifier = ClassifierPipeline()
 
     total_violations = 0
