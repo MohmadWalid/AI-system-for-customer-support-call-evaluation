@@ -34,12 +34,28 @@ def main():
         expected_label = transcript["fine_label"]
         utterances     = transcript["utterances"]
 
-        # ── Classify: combine all customer turns ──────────────────────────
-        customer_text    = " ".join(
-            u["text"] for u in utterances if u["speaker"] == "customer"
-        )
-        prediction       = classifier(customer_text)
-        predicted_label  = prediction["fine_label"]
+        # ── Classify: individual customer turns with majority vote ────────
+        label_counts = {}
+        label_scores = {}
+
+        for u in utterances:
+            if u["speaker"] == "customer":
+                prediction = classifier(u["text"])
+                lbl = prediction["fine_label"]
+                score = prediction.get("confidence", 0.0)
+
+                label_counts[lbl] = label_counts.get(lbl, 0) + 1
+                label_scores[lbl] = label_scores.get(lbl, 0.0) + score
+
+        # Majority vote with confidence tie-breaker
+        predicted_label = None
+        if label_counts:
+            predicted_label = max(
+                label_counts.keys(),
+                key=lambda k: (label_counts[k], label_scores[k])
+            )
+        else:
+            predicted_label = "unknown"
         classifier_match = predicted_label == expected_label
         match_icon       = "OK" if classifier_match else "MISMATCH"
 

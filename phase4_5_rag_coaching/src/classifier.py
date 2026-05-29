@@ -189,12 +189,16 @@ def classify(
 
     coarse_id = coarse_logits.argmax(dim=-1).item()
     fine_id = fine_logits.argmax(dim=-1).item()
+    
+    fine_probs = F.softmax(fine_logits, dim=-1)
+    confidence = fine_probs[0, fine_id].item()
 
     return {
         "coarse_id": coarse_id,
         "coarse_label": id2coarse[str(coarse_id)],
         "fine_id": fine_id,
         "fine_label": id2fine[str(fine_id)],
+        "confidence": round(confidence, 4),
     }
 
 
