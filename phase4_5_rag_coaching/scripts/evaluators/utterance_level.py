@@ -41,6 +41,7 @@ def evaluate(utterances: list[dict], fine_label: str, policies_text: str, client
     overall_verdict = "ok"
     
     for i, exch in enumerate(exchanges):
+        time.sleep(4)
         prompt = (
             f"You are a banking call center QA evaluator.\n"
             f"Issue class: {fine_label}\n\n"
@@ -57,6 +58,7 @@ def evaluate(utterances: list[dict], fine_label: str, policies_text: str, client
             f'"overall_summary": "one sentence about the agent\'s overall performance"}}'
         )
 
+        response = None
         for attempt in range(1, 10):
             try:
                 response = client.chat.completions.create(
@@ -70,10 +72,13 @@ def evaluate(utterances: list[dict], fine_label: str, policies_text: str, client
                 if "rate_limit" in str(e).lower() or "429" in str(e) or (
                     hasattr(e, "status_code") and e.status_code == 429
                 ):
-                    print(f"  [Groq] Rate limit hit. Sleeping 5s (attempt {attempt}/9)...")
-                    time.sleep(5)
+                    print(f"  [Groq] Rate limit hit. Sleeping 15s (attempt {attempt}/9)...")
+                    time.sleep(15)
                 else:
                     raise e
+        if response is None:
+            print(f"  [Groq-Utterance] All attempts failed for exchange {i+1}. Skipping.")
+            continue
 
         raw = response.choices[0].message.content.strip()
         try:
