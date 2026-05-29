@@ -134,15 +134,11 @@ class RAGEvaluator:
                     raise e
 
         raw = response.choices[0].message.content.strip()
-        if raw.startswith("```"):
-            raw = raw.split("```")[1]
-            if raw.startswith("json"):
-                raw = raw[4:]
-            raw = raw.strip()
-
         try:
-            parsed = json.loads(raw)
-        except json.JSONDecodeError:
+            start = raw.index("{")
+            end = raw.rindex("}") + 1
+            parsed = json.loads(raw[start:end])
+        except (ValueError, json.JSONDecodeError):
             parsed = {
                 "verdict": "error",
                 "violations": [],
