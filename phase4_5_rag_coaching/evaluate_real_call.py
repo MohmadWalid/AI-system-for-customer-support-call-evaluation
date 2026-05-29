@@ -1,7 +1,7 @@
 """
 run_real_call.py — Evaluates a real multi-issue call using automatic topic segmentation.
 
-Reads:  ../test_data/real_call_analysis .json   (note: space in filename)
+Reads:  data/real_call/real_call_analysis .json   (note: space in filename)
 Writes: data/real_call_results.json
 """
 import json
@@ -19,7 +19,7 @@ from src.topic_segmenter import segment_transcript, print_segments
 DIVIDER = "=" * 70
 
 # Filename on disk has a trailing space
-DATA_PATH    = Path(__file__).parent.parent / "test_data" / "real_call_analysis .json"
+DATA_PATH    = Path(__file__).parent / "data" / "real_call" / "real_call_analysis .json"
 RESULTS_PATH = Path(__file__).parent / "data" / "real_call_results.json"
 
 
