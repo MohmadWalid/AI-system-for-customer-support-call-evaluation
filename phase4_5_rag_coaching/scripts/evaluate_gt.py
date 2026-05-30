@@ -7,9 +7,9 @@ import json
 import sys
 from pathlib import Path
 
-import openai
+import groq
 
-from openai import OpenAI
+from groq import Groq
 
 # ---------------------------------------------------------------------------
 # Allow running from the project root  (python scripts/evaluate_gt.py ...)
@@ -19,7 +19,7 @@ _SCRIPT_DIR = Path(__file__).resolve().parent
 _PROJECT_ROOT = _SCRIPT_DIR.parent
 sys.path.insert(0, str(_PROJECT_ROOT))
 
-from config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL  # noqa: E402
+from config import GROQ_API_KEY  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -37,7 +37,7 @@ MAX_RETRIES = 3
 # ---------------------------------------------------------------------------
 # LLM client
 # ---------------------------------------------------------------------------
-client = OpenAI(api_key=OPENROUTER_API_KEY, base_url=OPENROUTER_BASE_URL)
+client = Groq(api_key=GROQ_API_KEY)
 
 
 # ---------------------------------------------------------------------------
@@ -95,8 +95,8 @@ def ask_llm_match(
                 temperature=0.0,
             )
             return response.choices[0].message.content.strip()
-        except (ConnectionError, OSError, openai.APIConnectionError,
-                openai.APITimeoutError) as exc:
+        except (ConnectionError, OSError, groq.APIConnectionError,
+                groq.APITimeoutError) as exc:
             if attempt == MAX_RETRIES:
                 print(f"    [!] Connection failed after {MAX_RETRIES} retries: {exc}")
                 return "NO_MATCH"

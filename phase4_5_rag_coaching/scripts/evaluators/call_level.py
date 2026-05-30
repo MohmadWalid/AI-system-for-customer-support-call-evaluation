@@ -47,6 +47,7 @@ def evaluate(utterances, fine_label, policies_text, client):
     )
 
     # Groq API rate-limit resilient retry loop (max 9 attempts)
+    response = None
     for attempt in range(1, 10):
         try:
             response = client.chat.completions.create(
@@ -61,9 +62,19 @@ def evaluate(utterances, fine_label, policies_text, client):
                 hasattr(e, "status_code") and e.status_code == 429
             ):
                 print(f"  [Groq] Rate limit hit. Sleeping 5s (attempt {attempt}/9)...")
-                time.sleep(5)
+                time.sleep(15)
             else:
                 raise e
+
+    if response is None:
+        print(f"  [Groq-CallLevel] All attempts failed. Skipping call.")
+        return {
+            "verdict":         "error",
+            "recovered":       False,
+            "recovery_note":   "",
+            "violations":      [],
+            "overall_summary": "All API attempts failed.",
+        }
 
     # Extract and parse JSON robustly from the LLM response
     raw = response.choices[0].message.content.strip()

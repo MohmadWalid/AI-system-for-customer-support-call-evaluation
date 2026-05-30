@@ -1,0 +1,954 @@
+{
+  "results_file": "call_single_results.json",
+  "calls_evaluated": 30,
+  "total_tp": 38,
+  "total_fp": 48,
+  "total_fn": 75,
+  "precision": 0.4419,
+  "recall": 0.3363,
+  "f1": 0.3819,
+  "per_call": [
+    {
+      "call_id": "balance_not_updated_ambiguous_1",
+      "quality_level": "ambiguous",
+      "planted_count": 3,
+      "detected_count": 2,
+      "tp": 1,
+      "fp": 1,
+      "fn": 2,
+      "match_details": [
+        {
+          "detected_evidence": "The agent mentioned that 'These things take time' and 'Probably just the weekend affecting things.'",
+          "detected_reason": "The agent did not provide a clear explanation of the transfer processing time frame and did not offer tracking information or a reference number.",
+          "matched_planted": "vague and uncommitted response; did not explain processing timeframe or offer trace",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not offer to provide tracking information or a reference number to help the customer track the status of their transfer.",
+          "detected_reason": "The agent did not provide tracking information or a reference number.",
+          "matched_planted": null,
+          "llm_response": "vague and uncommitted response; did not explain processing timeframe or offer trace",
+          "status": "FP",
+          "note": "duplicate match"
+        }
+      ]
+    },
+    {
+      "call_id": "balance_not_updated_bad_1",
+      "quality_level": "bad",
+      "planted_count": 3,
+      "detected_count": 3,
+      "tp": 1,
+      "fp": 2,
+      "fn": 2,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not verify the deposit details, including the type of deposit, date of deposit, and deposit amount.",
+          "detected_reason": "The agent did not gather sufficient information to identify potential causes of the delay.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not investigate the transaction status by checking the bank's transaction records.",
+          "detected_reason": "The agent did not provide the customer with an update on the status of their deposit.",
+          "matched_planted": "dismissive and unhelpful; offered no investigation or follow-up",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not offer to conduct a trace or research to locate the funds.",
+          "detected_reason": "The agent only suggested calling back if the issue persists, rather than taking proactive steps to resolve the issue.",
+          "matched_planted": null,
+          "llm_response": "The detected violation describes the same agent behavior as:\n\n dismissive and unhelpful; offered no investigation or follow-up\n\nThis matches because both indicate that the agent failed to take proactive steps to resolve the issue or assist the customer further, instead offering a passive suggestion (calling back if the issue persists) rather than investigating or following up on the issue at hand.",
+          "status": "FP",
+          "note": "duplicate match"
+        }
+      ]
+    },
+    {
+      "call_id": "balance_not_updated_incomplete_1",
+      "quality_level": "incomplete",
+      "planted_count": 4,
+      "detected_count": 3,
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "match_details": [
+        {
+          "detected_evidence": "The agent couldn't see full details on their system but didn't provide any information about potential delays or processing times.",
+          "detected_reason": "The agent failed to provide information about potential delays or processing times.",
+          "matched_planted": "issue left unresolved with no steps taken to reassure customer or set expectations",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent didn't offer to conduct a trace or research to locate the funds.",
+          "detected_reason": "The agent didn't offer to conduct a trace or research to locate the funds.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent didn't offer to provide tracking information or a reference number.",
+          "detected_reason": "The agent didn't offer to provide tracking information or a reference number.",
+          "matched_planted": "did not offer callback option or reference number before transfer",
+          "status": "TP"
+        }
+      ]
+    },
+    {
+      "call_id": "cancel_transfer_ambiguous_1",
+      "quality_level": "ambiguous",
+      "planted_count": 4,
+      "detected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "match_details": [
+        {
+          "detected_evidence": "The agent told the customer to 'leave it a day and see what happens' without providing further instructions or a clear resolution.",
+          "detected_reason": "The agent did not provide clear corrective action or resolution to the customer's issue of a misdirected payment.",
+          "matched_planted": "resolution entirely unclear; customer left uncertain of outcome",
+          "status": "TP"
+        }
+      ]
+    },
+    {
+      "call_id": "cancel_transfer_bad_1",
+      "quality_level": "bad",
+      "planted_count": 4,
+      "detected_count": 5,
+      "tp": 3,
+      "fp": 2,
+      "fn": 1,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not verify if the transfer was still pending before stating it was processed.",
+          "detected_reason": "The agent immediately stated the transfer could not be cancelled without checking its status.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH \n\nThe detected violation describes a situation where the agent failed to verify the status of a transfer before providing information to the customer. This does not exactly match any of the provided planted violations.",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not offer to initiate a recall request.",
+          "detected_reason": "The agent did not consider the possibility of a recall.",
+          "matched_planted": "incorrectly stated that payment recalls are not available (they are a standard banking service)",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not clearly explain why the transfer could not be cancelled.",
+          "detected_reason": "The agent only mentioned that it was processed and cleared.",
+          "matched_planted": "failed to verify customer identity",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not offer an alternative solution.",
+          "detected_reason": "The agent only suggested contacting the recipient.",
+          "matched_planted": "left customer with no recourse for misdirected payment",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not provide any further assistance.",
+          "detected_reason": "The agent simply stated there was no specific team to contact.",
+          "matched_planted": null,
+          "llm_response": "Based on the detected violation evidence and reason, it seems that the agent did not provide further assistance and instead stated that there was no specific team to contact, effectively leaving the customer with no recourse.\n\nThe matching planted violation text is: \nleft customer with no recourse for misdirected payment \n\nThis seems to describe a similar situation where the customer is left without a way to resolve their issue, in this case, a misdirected payment.",
+          "status": "FP",
+          "note": "duplicate match"
+        }
+      ]
+    },
+    {
+      "call_id": "cancel_transfer_incomplete_1",
+      "quality_level": "incomplete",
+      "planted_count": 4,
+      "detected_count": 4,
+      "tp": 1,
+      "fp": 3,
+      "fn": 3,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not verify if the transfer has been processed or is still pending before taking further action.",
+          "detected_reason": "The agent did not check the transfer status before putting the customer on hold and asking the payments team for assistance.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not initiate a Faster Payment recall immediately and give the customer a reference number.",
+          "detected_reason": "The agent instead asked the customer to fill in a form online and then called back with the details.",
+          "matched_planted": "did not immediately raise payment recall; deferred to online form unnecessarily",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not offer an alternative solution such as a refund or a new transfer to the correct account.",
+          "detected_reason": "The agent only mentioned that someone would call the customer and thanked them for their patience.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH \n\nThe detected violation describes a situation where the agent failed to provide an alternative solution and only mentioned that someone would call the customer. This does not directly match any of the provided planted violations.",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not clearly explain to the customer that once a transfer is processed, it may be irreversible and that they may need to contact the recipient to request a refund.",
+          "detected_reason": "The agent did not provide this explanation at all.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        }
+      ]
+    },
+    {
+      "call_id": "card_arrival_ambiguous_1",
+      "quality_level": "ambiguous",
+      "planted_count": 2,
+      "detected_count": 4,
+      "tp": 0,
+      "fp": 4,
+      "fn": 2,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not provide the estimated delivery time frame of 7-10 business days.",
+          "detected_reason": "The agent did not provide the delivery time frame.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent stated that tracking information is not available for standard card deliveries.",
+          "detected_reason": "The agent did not provide tracking information.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not investigate the status of the card and provide an update on the cause of the delay.",
+          "detected_reason": "The agent did not investigate the delay.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not offer alternative delivery options.",
+          "detected_reason": "The agent did not offer alternative delivery options.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        }
+      ]
+    },
+    {
+      "call_id": "card_arrival_bad_1",
+      "quality_level": "bad",
+      "planted_count": 4,
+      "detected_count": 5,
+      "tp": 1,
+      "fp": 4,
+      "fn": 3,
+      "match_details": [
+        {
+          "detected_evidence": "The agent stated 2-3 weeks instead of 7-10 business days",
+          "detected_reason": "The agent provided an incorrect delivery timeline",
+          "matched_planted": "provided incorrect delivery timeframe (stated 2-3 weeks instead of 5-7 working days)",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not investigate the status of the card after 10 business days",
+          "detected_reason": "The agent did not investigate the delay",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not check the status of the card in the system",
+          "detected_reason": "The agent did not provide a card status update",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not provide tracking information",
+          "detected_reason": "The agent did not offer to track the card delivery",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not offer alternative delivery options",
+          "detected_reason": "The agent did not offer alternative delivery options",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        }
+      ]
+    },
+    {
+      "call_id": "card_arrival_bad_2",
+      "quality_level": "bad",
+      "planted_count": 4,
+      "detected_count": 4,
+      "tp": 0,
+      "fp": 4,
+      "fn": 4,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not investigate the status of the card and provide an update on the cause of the delay.",
+          "detected_reason": "The customer reported not receiving the card within 10 business days of the mailing date, but the agent only stated that the card system showed it was sent and did not provide further information.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not provide the customer with tracking information, including the shipping carrier and tracking number, if available.",
+          "detected_reason": "The agent only stated that the card system showed it was sent, but did not provide any tracking information.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not inform the customer of the estimated delivery time frame for card delivery.",
+          "detected_reason": "The agent mentioned that 'these things get delayed all the time' but did not provide a specific delivery time frame.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not check if expedited shipping was available for the customer's card type and inform the customer of the additional cost and benefits.",
+          "detected_reason": "The agent simply stated that they could not reissue the card until it was officially lost, without offering alternative solutions.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        }
+      ]
+    },
+    {
+      "call_id": "card_arrival_incomplete_1",
+      "quality_level": "incomplete",
+      "planted_count": 4,
+      "detected_count": 5,
+      "tp": 1,
+      "fp": 4,
+      "fn": 3,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not investigate the delayed delivery of the card and instead transferred the customer to the card services team without providing any updates.",
+          "detected_reason": "The customer reported a delayed card and the agent did not take ownership to resolve the issue.",
+          "matched_planted": "transferred call without addressing or resolving the customer's question",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not provide a card status update and instead transferred the customer to the card services team.",
+          "detected_reason": "The agent did not provide any updates on the current status of the card.",
+          "matched_planted": null,
+          "llm_response": "transferred call without addressing or resolving the customer's question",
+          "status": "FP",
+          "note": "duplicate match"
+        },
+        {
+          "detected_evidence": "The agent did not provide tracking information and instead told the customer that the card services team would go through all of that with them.",
+          "detected_reason": "The agent did not provide any tracking information to the customer.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not provide a delivery time frame and instead transferred the customer to the card services team.",
+          "detected_reason": "The agent did not inform the customer of the estimated delivery time frame.",
+          "matched_planted": null,
+          "llm_response": "transferred call without addressing or resolving the customer's question \n\nThis detected violation seems to match with this planted violation, as in both cases the agent transferred the call without resolving the customer's concern (not providing delivery time frame in the detected violation and not addressing the customer's question in the planted violation).",
+          "status": "FP",
+          "note": "duplicate match"
+        },
+        {
+          "detected_evidence": "The agent did not offer alternative delivery options and instead transferred the customer to the card services team.",
+          "detected_reason": "The agent did not offer alternative delivery options such as expedited shipping or pickup at a local branch.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH \n\nThe detected violation describes a situation where the agent transferred the customer without addressing their needs (not offering alternative delivery options), but it doesn't exactly match any of the provided planted violations. However, it comes closest to \"transferred call without addressing or resolving the customer's question,\" but the context (about delivery options) doesn't align perfectly. Therefore, there's no exact match.",
+          "status": "FP",
+          "note": "duplicate match"
+        }
+      ]
+    },
+    {
+      "call_id": "card_blocked_ambiguous_1",
+      "quality_level": "ambiguous",
+      "planted_count": 3,
+      "detected_count": 2,
+      "tp": 2,
+      "fp": 0,
+      "fn": 1,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not verify the customer's PIN block status or request their card details to investigate the issue further.",
+          "detected_reason": "The agent did not follow the policies to troubleshoot the card issue.",
+          "matched_planted": "unable to diagnose or resolve card block; failed to take definitive action",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent only mentioned that someone may call the customer back within 24-48 hours and suggested using a different payment method, but did not offer alternative solutions to resolve the issue.",
+          "detected_reason": "The agent did not provide sufficient solutions to the customer.",
+          "matched_planted": "left customer without a working payment method and no clear resolution timeline",
+          "status": "TP"
+        }
+      ]
+    },
+    {
+      "call_id": "card_blocked_ambiguous_2",
+      "quality_level": "ambiguous",
+      "planted_count": 3,
+      "detected_count": 2,
+      "tp": 0,
+      "fp": 2,
+      "fn": 3,
+      "match_details": [
+        {
+          "detected_evidence": "The agent found a 'temporary restriction' but did not verify if the card was expired or not.",
+          "detected_reason": "The agent did not check if the card was expired, which is a crucial step in resolving the customer's issue.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not provide instructions on what to do if the card was expired or near expiration.",
+          "detected_reason": "The agent only lifted the temporary restriction but did not discuss potential expiration or next steps.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        }
+      ]
+    },
+    {
+      "call_id": "card_blocked_bad_1",
+      "quality_level": "bad",
+      "planted_count": 5,
+      "detected_count": 4,
+      "tp": 2,
+      "fp": 2,
+      "fn": 3,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not guide the customer through basic troubleshooting steps for contactless issues.",
+          "detected_reason": "The agent did not verify if the customer's contactless payment settings are enabled and correctly configured.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not request the customer's card details to investigate the issue further.",
+          "detected_reason": "The agent did not ask for the card number and expiration date.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent offered to order a new card but did not provide information on any associated fees or charges.",
+          "detected_reason": "The agent only mentioned that a new card takes up to two weeks.",
+          "matched_planted": "provided incorrect card delivery timeframe (stated two weeks)",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not verify if there are any known issues with the customer's account or card.",
+          "detected_reason": "The agent simply told the customer that the branch is their best option.",
+          "matched_planted": "directed customer to branch unnecessarily — card unblocking can be done over the phone",
+          "status": "TP"
+        }
+      ]
+    },
+    {
+      "call_id": "card_blocked_incomplete_1",
+      "quality_level": "incomplete",
+      "planted_count": 4,
+      "detected_count": 2,
+      "tp": 1,
+      "fp": 1,
+      "fn": 3,
+      "match_details": [
+        {
+          "detected_evidence": "The agent transferred the customer to the fraud team without offering alternative solutions for immediate access to funds.",
+          "detected_reason": "The customer was left waiting in a queue without being provided with alternative solutions.",
+          "matched_planted": "transferred customer in urgent situation without attempting any preliminary action",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not provide the customer with options to unblock their PIN, such as visiting a branch or using a self-service terminal.",
+          "detected_reason": "The agent only transferred the customer to the fraud team without providing additional support.",
+          "matched_planted": null,
+          "llm_response": "transferred customer in urgent situation without attempting any preliminary action",
+          "status": "FP",
+          "note": "duplicate match"
+        }
+      ]
+    },
+    {
+      "call_id": "disputed_charge_ambiguous_1",
+      "quality_level": "ambiguous",
+      "planted_count": 3,
+      "detected_count": 3,
+      "tp": 1,
+      "fp": 2,
+      "fn": 2,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not immediately process a refund or waiver of the charge.",
+          "detected_reason": "The agent mentioned that a refund would depend on the merchant's policy and suggested the customer raise it with them directly.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not provide a reference number immediately, but rather mentioned it would come through by email.",
+          "detected_reason": "",
+          "matched_planted": "dispute raised without providing case reference number or clear timeline",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not inform the customer of the expected timeframe for resolving the issue.",
+          "detected_reason": "",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        }
+      ]
+    },
+    {
+      "call_id": "disputed_charge_bad_1",
+      "quality_level": "bad",
+      "planted_count": 4,
+      "detected_count": 4,
+      "tp": 1,
+      "fp": 3,
+      "fn": 3,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not verify the customer's account information and the details of the disputed direct debit, including checking for mandate information.",
+          "detected_reason": "",
+          "matched_planted": "failed to verify customer identity before accessing account",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not inform the customer that an investigation will be initiated to determine the cause of the unauthorized direct debit and provide a timeline for resolution.",
+          "detected_reason": "",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not inform the customer that a refund will be processed for the disputed amount, if applicable, and provide details on the refund process and timeline.",
+          "detected_reason": "",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not notify the customer of the next steps in the investigation process, including any additional information required from the customer or the expected resolution timeframe.",
+          "detected_reason": "",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        }
+      ]
+    },
+    {
+      "call_id": "disputed_charge_bad_2",
+      "quality_level": "bad",
+      "planted_count": 4,
+      "detected_count": 3,
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not process a refund or waiver of the charge, despite the customer disputing it.",
+          "detected_reason": "The agent incorrectly stated that a written dispute was required for amounts over £100, and did not offer to assist the customer further.",
+          "matched_planted": "fabricated policy: stated written disputes required for amounts over £100, no such policy exists",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not thoroughly investigate the charge reason, instead providing a generic explanation about delayed billing.",
+          "detected_reason": "The agent did not check the customer's account history and transaction records to determine the cause of the extra charge.",
+          "matched_planted": "failed to verify customer identity — used account number alone with no further checks",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not ask the customer for the specific date and amount of the extra charge mentioned on their statement.",
+          "detected_reason": "The agent did not verify the charge details before proceeding with the investigation.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH \n\nAlthough the detected violation reason mentions \"did not verify\", the context and specific behavior described don't exactly match any of the provided planted violations. The closest might seem to be \"failed to verify customer identity — used account number alone with no further checks\", but it specifically talks about verifying customer identity, not the charge details. Therefore, there's no exact match.",
+          "status": "FP",
+          "note": "duplicate match"
+        }
+      ]
+    },
+    {
+      "call_id": "disputed_charge_incomplete_1",
+      "quality_level": "incomplete",
+      "planted_count": 4,
+      "detected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not offer to provide tracking information or a reference number to help the customer track the status of their transfer.",
+          "detected_reason": "The agent transferred the customer without providing tracking information or a reference number.",
+          "matched_planted": "transferred without raising any preliminary case or providing customer a reference number",
+          "status": "TP"
+        }
+      ]
+    },
+    {
+      "call_id": "failed_card_payment_ambiguous_1",
+      "quality_level": "ambiguous",
+      "planted_count": 3,
+      "detected_count": 3,
+      "tp": 0,
+      "fp": 3,
+      "fn": 3,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not provide the customer's current top-up limit.",
+          "detected_reason": "The agent only mentioned the daily spending limit of $500, but did not verify or discuss the top-up limits.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not run a history of the customer's top-up transactions.",
+          "detected_reason": "The agent did not investigate further to identify any recurring issues or patterns with top-ups.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not check the status of the top-up in the customer's account.",
+          "detected_reason": "The agent did not determine if the top-up was successfully processed or not.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        }
+      ]
+    },
+    {
+      "call_id": "failed_card_payment_bad_1",
+      "quality_level": "bad",
+      "planted_count": 4,
+      "detected_count": 4,
+      "tp": 2,
+      "fp": 2,
+      "fn": 2,
+      "match_details": [
+        {
+          "detected_evidence": "The agent mentioned they can see the customer's account but didn't check for any restrictions",
+          "detected_reason": "The agent didn't thoroughly verify the account status",
+          "matched_planted": "failed to properly diagnose card decline reason — did not check card status, fraud flags, or daily limits",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent didn't review the customer's recent transfer history",
+          "detected_reason": "The agent didn't investigate the customer's recent transfer history",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent suggested trying again later or ordering a new card without providing a clear reason",
+          "detected_reason": "The agent didn't provide a clear reason for the declined transfer and a satisfactory resolution",
+          "matched_planted": "offered no definitive resolution; directed customer to reorder card without identifying root cause",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent stated they don't see anything to fix without exploring other possibilities",
+          "detected_reason": "The agent didn't provide a clear resolution to the customer's issue",
+          "matched_planted": null,
+          "llm_response": "The detected violation reason states: \"The agent didn't provide a clear resolution to the customer's issue\".\n\nThis matches with the planted violation: \n- offered no definitive resolution; directed customer to reorder card without identifying root cause\n\nThe detected violation evidence also aligns with this, as the agent stated they don't see anything to fix without exploring other possibilities, implying a lack of clear resolution.\n\nMatching planted violation text: offered no definitive resolution; directed customer to reorder card without identifying root cause",
+          "status": "FP",
+          "note": "duplicate match"
+        }
+      ]
+    },
+    {
+      "call_id": "failed_card_payment_bad_2",
+      "quality_level": "bad",
+      "planted_count": 5,
+      "detected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 4,
+      "match_details": [
+        {
+          "detected_evidence": "The customer provided the account number (turn 6) but the agent did not verify the customer's identity before providing account information and discussing sensitive transactions.",
+          "detected_reason": "The agent failed to verify the customer's identity before discussing account information and transactions.",
+          "matched_planted": "failed to verify customer identity — used account number alone with no further checks",
+          "status": "TP"
+        }
+      ]
+    },
+    {
+      "call_id": "failed_card_payment_incomplete_1",
+      "quality_level": "incomplete",
+      "planted_count": 4,
+      "detected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "match_details": [
+        {
+          "detected_evidence": "The agent transferred the customer without providing a reference number or tracking information.",
+          "detected_reason": "The customer was not provided with a reference number or tracking information to track the status of their transfer.",
+          "matched_planted": "failed to provide reference number before transfer",
+          "status": "TP"
+        }
+      ]
+    },
+    {
+      "call_id": "transfer_not_received_ambiguous_1",
+      "quality_level": "ambiguous",
+      "planted_count": 3,
+      "detected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 2,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not provide a reference number or offer to provide tracking information immediately.",
+          "detected_reason": "The agent mentioned that they 'don't have a number to give you yet' and told the customer to 'just wait for now' instead of providing an alternative solution or a timeline for when the reference number would be available.",
+          "matched_planted": "did not definitively raise a trace or provide any reference number",
+          "status": "TP"
+        }
+      ]
+    },
+    {
+      "call_id": "transfer_not_received_bad_1",
+      "quality_level": "bad",
+      "planted_count": 4,
+      "detected_count": 3,
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not offer tracking information or a reference number to help the customer track the status of their transfer.",
+          "detected_reason": "The agent should have provided tracking information or a reference number to help the customer track the transfer.",
+          "matched_planted": "failed to raise a payment trace or take any remedial action",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent stated that they cannot trace the transfer until it's been missing for two weeks, which is not in line with the policy.",
+          "detected_reason": "The agent should have offered to conduct trace or research to locate the funds and provide an update to the customer earlier.",
+          "matched_planted": "provided incorrect trace policy (stated 2 weeks; trace can be initiated immediately)",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent still did not offer to conduct trace or research to locate the funds and provide an update to the customer.",
+          "detected_reason": "The agent should have taken further action to assist the customer.",
+          "matched_planted": null,
+          "llm_response": "The detected violation describes the same agent behavior as: \n\nfailed to raise a payment trace or take any remedial action\n\nThis matches because both the detected violation evidence and the planted violation text indicate that the agent did not take further action (i.e., conduct a trace or research) to assist the customer.",
+          "status": "FP",
+          "note": "duplicate match"
+        }
+      ]
+    },
+    {
+      "call_id": "transfer_not_received_bad_2",
+      "quality_level": "bad",
+      "planted_count": 4,
+      "detected_count": 4,
+      "tp": 2,
+      "fp": 2,
+      "fn": 2,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not verify if the transfer was still pending or had been processed.",
+          "detected_reason": "The agent immediately concluded that the issue was with the sending bank without checking the transfer status.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH \n\nThe detected violation describes the agent not verifying the transfer status and jumping to conclusions about the issue being with the sending bank. This does not directly match any of the provided planted violations.",
+          "status": "FP",
+          "note": "no match"
+        },
+        {
+          "detected_evidence": "The agent did not offer to initiate a recall request or provide a reference number to track the transfer.",
+          "detected_reason": "The agent told the customer that they 'can't trace something that doesn't exist in our system'.",
+          "matched_planted": "incorrectly stated that the receiving bank cannot trace incoming payments",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not investigate the cause of the delay and simply told the customer to wait a few more days.",
+          "detected_reason": "The agent did not provide a detailed explanation for the delay or offer alternative solutions.",
+          "matched_planted": "dismissive throughout; offered no actionable assistance",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not offer to provide tracking information or a reference number to help the customer track the status of their transfer.",
+          "detected_reason": "The agent told the customer that there was 'not much else I can do'.",
+          "matched_planted": null,
+          "llm_response": "The detected violation describes an agent who:\n\n* did not offer assistance in tracking the transfer\n* stated there was little else they could do\n\nThis matches the planted violation:\n\n* dismissive throughout; offered no actionable assistance\n\nSo, the answer is: \ndismissive throughout; offered no actionable assistance",
+          "status": "FP",
+          "note": "duplicate match"
+        }
+      ]
+    },
+    {
+      "call_id": "transfer_not_received_incomplete_1",
+      "quality_level": "incomplete",
+      "planted_count": 4,
+      "detected_count": 3,
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not offer tracking information or a reference number to help the customer track the status of their transfer.",
+          "detected_reason": "The agent transferred the customer to the international team without providing any tracking information or a reference number.",
+          "matched_planted": "transferred without providing any case reference or setting proper expectations",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not provide the customer with an estimated timeframe for the transfer to complete.",
+          "detected_reason": "The agent only mentioned that the international team would be 'best placed to tell' the customer about the timeframe.",
+          "matched_planted": null,
+          "llm_response": "transferred without providing any case reference or setting proper expectations \n\nThis matches because not providing an estimated timeframe for the transfer to complete can be considered part of \"setting proper expectations\".",
+          "status": "FP",
+          "note": "duplicate match"
+        },
+        {
+          "detected_evidence": "The agent did not confirm with the customer that the account information, including the recipient's account details, is correct and matches the information on file.",
+          "detected_reason": "The agent did not verify the account information with the customer before transferring them to the international team.",
+          "matched_planted": "failed to verify customer identity before accessing account",
+          "status": "TP"
+        }
+      ]
+    },
+    {
+      "call_id": "wrong_amount_of_cash_received_ambiguous_1",
+      "quality_level": "ambiguous",
+      "planted_count": 4,
+      "detected_count": 2,
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not investigate the ATM transaction details to determine if the correct amount was dispensed and if the customer's account was debited correctly.",
+          "detected_reason": "The agent only made a note and did not take further action to investigate the transaction.",
+          "matched_planted": "did not raise formal ATM discrepancy report; only made an internal note",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not provide corrective action or instructions on how to submit a claim for the missing funds.",
+          "detected_reason": "The agent only told the customer to call back if they don't hear anything, without providing any further assistance.",
+          "matched_planted": "left customer without clear resolution or guarantee of follow-up",
+          "status": "TP"
+        }
+      ]
+    },
+    {
+      "call_id": "wrong_amount_of_cash_received_bad_1",
+      "quality_level": "bad",
+      "planted_count": 5,
+      "detected_count": 3,
+      "tp": 2,
+      "fp": 1,
+      "fn": 3,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not confirm the customer's requested withdrawal amount and the amount they received from the ATM.",
+          "detected_reason": "The agent questioned the customer's memory instead of verifying the transaction details.",
+          "matched_planted": "failed to verify customer identity",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not provide instructions on how to submit a claim for the missing funds or instruct the customer to return to the ATM location.",
+          "detected_reason": "The agent told the customer there's not much they can do without a receipt.",
+          "matched_planted": null,
+          "llm_response": "Based on the detected violation evidence and reason, it appears that the agent did not provide proper guidance or support to the customer. \n\nThe closest matching planted violation is: \n- did not provide complaint reference or properly route the complaint\n\nThis one seems related, as it also involves a lack of proper procedure followed by the agent when handling a customer complaint. \n\nHowever, a more similar one could be considered:\n- dismissed customer's claim without investigation\n\nThe agent essentially told the customer there's not much they can do, implying a dismissal of the claim without thorough investigation.\n\nBut an even closer one is not explicitly listed; however, we could make a case for 'failed to verify customer identity' being unrelated and the rest being somewhat related.\n\nGiven the choices, I would pick: \ndismissed customer's claim without investigation",
+          "status": "FP",
+          "note": "duplicate match"
+        },
+        {
+          "detected_evidence": "The agent did not request or document details of the incident, including the location and time of the transaction, and the ATM's response.",
+          "detected_reason": "The agent did not take detailed information about the incident.",
+          "matched_planted": "dismissed customer's claim without investigation",
+          "status": "TP"
+        }
+      ]
+    },
+    {
+      "call_id": "wrong_amount_of_cash_received_incomplete_1",
+      "quality_level": "incomplete",
+      "planted_count": 3,
+      "detected_count": 3,
+      "tp": 2,
+      "fp": 1,
+      "fn": 1,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not confirm the customer's requested withdrawal amount and the amount they received from the ATM.",
+          "detected_reason": "The agent did not verify the details of the transaction.",
+          "matched_planted": "failed to verify customer identity before discussing account",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not investigate the ATM transaction details to determine if the correct amount was dispensed and if the customer's account was debited correctly.",
+          "detected_reason": "The agent transferred the customer without taking further action.",
+          "matched_planted": "transferred without raising any discrepancy report or providing reference number",
+          "status": "TP"
+        },
+        {
+          "detected_evidence": "The agent did not provide corrective action or instructions on how to submit a claim for the missing funds.",
+          "detected_reason": "The agent transferred the customer without resolving the issue.",
+          "matched_planted": null,
+          "llm_response": "The detected violation reason \"The agent transferred the customer without resolving the issue\" matches with:\n\ntransferred without raising any discrepancy report or providing reference number \n\nThis is because both describe a scenario where the agent transferred (or completed the transfer for) the customer without properly addressing or resolving an issue (or discrepancy). \n\nTherefore, the matching planted violation text is:\n\ntransferred without raising any discrepancy report or providing reference number",
+          "status": "FP",
+          "note": "duplicate match"
+        }
+      ]
+    },
+    {
+      "call_id": "wrong_amount_of_cash_received_incomplete_2",
+      "quality_level": "incomplete",
+      "planted_count": 4,
+      "detected_count": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 4,
+      "match_details": [
+        {
+          "detected_evidence": "The agent did not provide information on obtaining a replacement card or any required documentation and potential fees.",
+          "detected_reason": "The agent did not fulfill the policy requirement to provide replacement card information.",
+          "matched_planted": null,
+          "llm_response": "NO_MATCH",
+          "status": "FP",
+          "note": "no match"
+        }
+      ]
+    }
+  ]
+}
