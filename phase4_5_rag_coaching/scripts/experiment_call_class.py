@@ -9,6 +9,7 @@ from pathlib import Path
 # Adjust system path to import modules from parent directory
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+import argparse
 from groq import Groq
 
 from config import GROQ_API_KEY
@@ -21,16 +22,21 @@ from scripts.experiment_utils import print_summary, save_results, build_result, 
 
 # Define experiment directory and output file paths
 EXPERIMENTS_DIR  = Path("data/experiments")
-RESULTS_PATH     = EXPERIMENTS_DIR / "call_class_results.json"
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--use-gt', action='store_true', help='Use ground truth intent labels instead of classifier')
+    args = parser.parse_args()
+
+    RESULTS_PATH = EXPERIMENTS_DIR / ("call_class_gt_results.json" if args.use_gt else "call_class_results.json")
+
     print(DIVIDER)
     print("  Experiment 1: Call-Level + Class-Scoped Index")
     print(DIVIDER)
 
     # Load components
     client     = Groq(api_key=GROQ_API_KEY)
-    classifier = ClassifierPipeline()
+    classifier = ClassifierPipeline() if not args.use_gt else None
 
     total_violations = 0
     all_results      = []
@@ -41,7 +47,7 @@ def main():
         utterances = transcript["utterances"]
 
         # Majority vote classification per transcript
-        predicted_label = classify(utterances, classifier)
+        predicted_label = transcript["intent"] if args.use_gt else classify(utterances, classifier)
 
         # 1) Retrieve policies using class-scoped
         try:

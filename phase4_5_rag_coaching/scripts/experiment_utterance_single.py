@@ -10,6 +10,7 @@ from pathlib import Path
 # Adjust system path to import modules from parent directory
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+import argparse
 import faiss
 import numpy as np
 from groq import Groq
@@ -27,9 +28,14 @@ from scripts.experiment_utils import print_summary, save_results, build_result, 
 EXPERIMENTS_DIR  = Path("data/experiments")
 INDEX_PATH       = EXPERIMENTS_DIR / "single_index.faiss"
 MAP_PATH         = EXPERIMENTS_DIR / "single_map.json"
-RESULTS_PATH     = EXPERIMENTS_DIR / "utterance_single_results.json"
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--use-gt', action='store_true', help='Use ground truth intent labels instead of classifier')
+    args = parser.parse_args()
+
+    RESULTS_PATH = EXPERIMENTS_DIR / ("utterance_single_gt_results.json" if args.use_gt else "utterance_single_results.json")
+
     if not INDEX_PATH.exists():
         print("[ERROR] Single index not found. Run scripts/build_single_index.py first.")
         sys.exit(1)
@@ -46,7 +52,7 @@ def main():
     # Load components
     embedder   = SentenceTransformer(EMBEDDING_MODEL)
     client     = Groq(api_key=GROQ_API_KEY)
-    classifier = ClassifierPipeline()
+    classifier = ClassifierPipeline() if not args.use_gt else None
 
     total_violations = 0
     all_results      = []
@@ -57,7 +63,7 @@ def main():
         utterances = transcript["utterances"]
 
         # Majority vote classification per transcript
-        predicted_label = classify(utterances, classifier)
+        predicted_label = transcript["intent"] if args.use_gt else classify(utterances, classifier)
 
         # 1) Retrieve policies using single global FAISS index
         customer_text = " ".join(
