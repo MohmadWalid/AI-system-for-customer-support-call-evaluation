@@ -50,6 +50,7 @@ def evaluate(utterances, fine_label, policies_text, client):
     response = None
     for attempt in range(1, 10):
         try:
+            time.sleep(2.0)  # Pacing to respect the 30 RPM rate limit
             response = client.chat.completions.create(
                 model=GROQ_MODEL,
                 messages=[{"role": "user", "content": prompt}],
@@ -61,8 +62,9 @@ def evaluate(utterances, fine_label, policies_text, client):
             if "rate_limit" in str(e).lower() or "429" in str(e) or (
                 hasattr(e, "status_code") and e.status_code == 429
             ):
-                print(f"  [Groq] Rate limit hit. Sleeping 5s (attempt {attempt}/9)...")
-                time.sleep(15)
+                sleep_time = min(60, 2 ** attempt * 5)
+                print(f"  [Groq] Rate limit hit. Sleeping {sleep_time}s (attempt {attempt}/9)...")
+                time.sleep(sleep_time)
             else:
                 raise e
 

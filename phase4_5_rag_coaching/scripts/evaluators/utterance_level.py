@@ -74,8 +74,9 @@ def evaluate(utterances: list[dict], fine_label: str, policies_text: str, client
                 if "rate_limit" in str(e).lower() or "429" in str(e) or (
                     hasattr(e, "status_code") and e.status_code == 429
                 ):
-                    print(f"  [Groq] Rate limit hit. Sleeping 15s (attempt {attempt}/9)...")
-                    time.sleep(15)
+                    sleep_time = min(60, 2 ** attempt * 5)
+                    print(f"  [Groq] Rate limit hit. Sleeping {sleep_time}s (attempt {attempt}/9)...")
+                    time.sleep(sleep_time)
                 else:
                     raise e
         if response is None:

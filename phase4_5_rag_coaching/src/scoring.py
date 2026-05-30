@@ -35,6 +35,7 @@ def assess_quality(agent_turns: list[str], fine_label: str) -> dict:
 
     for api_attempt in range(1, 10):
         try:
+            time.sleep(2.0)  # Pacing to respect the 30 RPM rate limit
             response = client.chat.completions.create(
                 model=GROQ_MODEL,
                 messages=[{"role": "user", "content": prompt}],
@@ -46,8 +47,9 @@ def assess_quality(agent_turns: list[str], fine_label: str) -> dict:
             if "rate_limit" in str(e).lower() or "429" in str(e) or (
                 hasattr(e, "status_code") and e.status_code == 429
             ):
-                print(f"  [Groq-Quality] Rate limit hit. Sleeping 5s (attempt {api_attempt}/9)...")
-                time.sleep(5)
+                sleep_time = min(60, 2 ** api_attempt * 5)
+                print(f"  [Groq-Quality] Rate limit hit. Sleeping {sleep_time}s (attempt {api_attempt}/9)...")
+                time.sleep(sleep_time)
             else:
                 raise e
 
