@@ -10,6 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import argparse
+import math
 from groq import Groq
 
 from config import GROQ_API_KEY
@@ -26,13 +27,39 @@ EXPERIMENTS_DIR  = Path("data/experiments")
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--use-gt', action='store_true', help='Use ground truth intent labels instead of classifier')
+    parser.add_argument('--sample', type=int, default=None, help='Sample N transcripts proportionally across quality levels')
     args = parser.parse_args()
 
-    RESULTS_PATH = EXPERIMENTS_DIR / ("call_class_gt_results.json" if args.use_gt else "call_class_results.json")
+    if args.sample is not None:
+        RESULTS_PATH = EXPERIMENTS_DIR / "call_class_gt_sample_results.json"
+    elif args.use_gt:
+        RESULTS_PATH = EXPERIMENTS_DIR / "call_class_gt_results.json"
+    else:
+        RESULTS_PATH = EXPERIMENTS_DIR / "call_class_results.json"
 
     print(DIVIDER)
     print("  Experiment 1: Call-Level + Class-Scoped Index")
     print(DIVIDER)
+
+    transcripts = list(TRANSCRIPTS)  # make a mutable copy
+
+    if args.sample is not None:
+        from collections import defaultdict
+        # Group by quality level
+        by_quality = defaultdict(list)
+        for t in transcripts:
+            by_quality[t["quality_level"]].append(t)
+        
+        total = len(transcripts)
+        sampled = []
+        for quality, group in sorted(by_quality.items()):
+            # Proportional allocation, at least 1 per quality level
+            k = max(1, round(args.sample * len(group) / total))
+            sampled.extend(sorted(group, key=lambda x: x["call_id"])[:k])
+        
+        # Trim to exact sample size if rounding pushed over
+        transcripts = sorted(sampled, key=lambda x: x["call_id"])[:args.sample]
+        print(f"[sample] Using {len(transcripts)} transcripts (sampled from {total})")
 
     # Load components
     client     = Groq(api_key=GROQ_API_KEY)
@@ -42,7 +69,7 @@ def main():
     all_results      = []
 
     # Run evaluations over transcripts
-    for transcript in TRANSCRIPTS:
+    for transcript in transcripts:
         call_id    = transcript["call_id"]
         utterances = transcript["utterances"]
 
@@ -68,7 +95,7 @@ def main():
 
         all_results.append(build_result(call_id, predicted_label, result))
 
-    print_summary(len(TRANSCRIPTS), total_violations)
+    print_summary(len(transcripts), total_violations)
     save_results(all_results, RESULTS_PATH)
 
 

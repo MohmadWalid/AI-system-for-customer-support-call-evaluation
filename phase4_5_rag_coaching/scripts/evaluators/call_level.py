@@ -37,6 +37,10 @@ def evaluate(utterances, fine_label, policies_text, client):
         f"If the agent made a mistake early but corrected it before the call ended, "
         f"do NOT flag it as a violation.\n"
         f"Only flag violations that were UNRESOLVED at the end of the call.\n\n"
+        f"IMPORTANT: Only flag violations that are explicitly covered by the POLICIES "
+        f"section above. Do not flag general customer service best practices or "
+        f"behaviours not mentioned in the provided policies. "
+        f"If a behaviour is not addressed in the policies, do not flag it.\n\n"
         f"Reply ONLY in this JSON format:\n"
         f'{{"verdict": "violation" or "ok", '
         f'"recovered": true or false, '

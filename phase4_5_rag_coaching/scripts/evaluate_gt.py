@@ -227,7 +227,7 @@ def main() -> None:
 
         result = results_by_id.get(call_id)
         if result is None:
-            print(f"  [{call_id}] ⚠ No result found — skipping")
+            print(f"  [{call_id}] WARNING: No result found -- skipping")
             fn_here = len(planted)
             total_fn += fn_here
             per_call.append({
