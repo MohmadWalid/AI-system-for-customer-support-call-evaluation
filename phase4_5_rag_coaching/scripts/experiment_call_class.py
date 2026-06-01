@@ -33,7 +33,7 @@ def main():
     if args.sample is not None:
         RESULTS_PATH = EXPERIMENTS_DIR / "call_class_gt_sample_results.json"
     elif args.use_gt:
-        RESULTS_PATH = EXPERIMENTS_DIR / "call_class_gt_results.json"
+        RESULTS_PATH = EXPERIMENTS_DIR / "call_class_gt_v2_results.json"
     else:
         RESULTS_PATH = EXPERIMENTS_DIR / "call_class_results.json"
 

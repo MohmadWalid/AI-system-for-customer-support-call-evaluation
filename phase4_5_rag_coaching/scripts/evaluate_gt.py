@@ -24,7 +24,7 @@ from config import GROQ_API_KEY  # noqa: E402
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
-MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"
+MODEL = "llama-3.1-8b-instant"
 TRANSCRIPTS_DIR = _PROJECT_ROOT / "data" / "transcripts"
 EXPERIMENTS_DIR = _PROJECT_ROOT / "data" / "experiments"
 
